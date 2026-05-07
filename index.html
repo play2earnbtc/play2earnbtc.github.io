@@ -4,71 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P2E Rewards</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: #050a15; color: white; font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
+        header { display: flex; justify-content: space-between; padding: 20px 5%; align-items: center; }
+        .logo { font-weight: bold; font-size: 1.2rem; }
+        .btn-signup-top { background: #ff5500; border: none; color: white; padding: 10px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; }
+        .btn-signin { background: #333; border: none; color: white; padding: 10px 15px; border-radius: 4px; margin-right: 5px; cursor: pointer; }
+        
+        .hero { padding: 40px 20px; }
+        h1 { font-size: 2.2rem; line-height: 1.1; margin: 0; }
+        h1 span { color: #f1c40f; }
+        .subtitle { color: #ccc; font-size: 0.9rem; margin: 10px 0 30px 0; }
+
+        /* حاوية الموديل الرئيسية */
+        .main-container { display: flex; justify-content: center; align-items: flex-start; gap: 20px; max-width: 1000px; margin: 0 auto; }
+
+        /* شبكة البطاقات 3x2 */
+        .grid-offers { display: grid; grid-template-columns: repeat(3, 140px); gap: 10px; }
+        .card { background: rgba(13, 27, 49, 0.9); border: 1px solid #1e3a5f; border-radius: 8px; padding: 15px 5px; font-size: 0.7rem; }
+        .amount { display: block; color: #00ffaa; font-size: 1.2rem; font-weight: bold; margin: 5px 0; }
+        .card small { display: block; font-size: 0.5rem; color: #7f8c8d; margin-top: 5px; }
+
+        /* منطقة الهاتف والزر */
+        .phone-section { width: 180px; position: relative; }
+        .phone-img { width: 100%; filter: drop-shadow(0 0 15px #000); }
+        .btn-main-signup { width: 100%; padding: 15px; background: #ff5500; border: none; color: white; font-size: 1.2rem; font-weight: bold; border-radius: 5px; margin-top: -30px; position: relative; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+
+        /* التذييل */
+        .payout-footer { margin-top: 40px; border-top: 1px solid #222; padding-top: 20px; }
+        .payout-items { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+        .p-box { background: #0d1b31; border: 1px solid #1e3a5f; padding: 10px 20px; border-radius: 4px; font-size: 0.8rem; flex: 1; max-width: 120px; }
+    </style>
 </head>
 <body>
-    <div id="landing-page">
-        <header>
-            <div class="logo">P2E Rewards</div>
-            <div class="header-btns">
-                <button class="btn-signin">SIGN IN</button>
-                <button class="btn-signup-top">SIGN UP FOR FREE</button>
-            </div>
-        </header>
 
-        <section class="hero">
-            <h1>REALITY REWARDS:<br><span class="highlight">TURN GAMING INTO REAL CASH!</span></h1>
-            <p class="subtitle">PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME – VERIFIED PAYOUTS!</p>
-            
-            <div class="main-container">
-                <div class="grid-offers">
-                    <div class="card">
-                        <div class="card-icon">❓</div>
-                        MYSTERY GAME <span class="amount">$250</span>
-                        <small>[INSTALL, LEVEL 10, PHONE VERIFY]</small>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🔥</div>
-                        ULTIMATE CHALLENGE <span class="amount">$500</span>
-                        <small>[INSTALL, LEVEL 10, PHONE VERIFY]</small>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🏃</div>
-                        SPEED RUN <span class="amount">$100</span>
-                        <small>[INSTALL, LEVEL 10, PHONE VERIFY]</small>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">🎮</div>
-                        SPEED RUN <span class="amount">$100</span>
-                        <small>[INSTALL, LEVEL 10, PHONE VERIFY]</small>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">⚔️</div>
-                        SHOMFIGHT Y <span class="amount">$200</span>
-                        <small>[INSTALL, LEVEL 10, PHONE VERIFY]</small>
-                    </div>
-                    <div class="card">
-                        <div class="card-icon">💇</div>
-                        POY HAIR <span class="amount">$100</span>
-                        <small>[INSTALL, LEVEL 10, PHONE VERIFY]</small>
-                    </div>
-                </div>
+    <header>
+        <div class="logo">P2E Rewards</div>
+        <div>
+            <button class="btn-signin">SIGN IN</button>
+            <button class="btn-signup-top">SIGN UP FOR FREE</button>
+        </div>
+    </header>
 
-                <div class="phone-section">
-                    <img src="https://www.pngarts.com/files/8/Apple-iPhone-12-PNG-Image.png" class="phone-img">
-                    <button class="btn-main-signup">SIGN UP</button>
-                </div>
+    <section class="hero">
+        <h1>REALITY REWARDS:<br><span>TURN GAMING INTO REAL CASH!</span></h1>
+        <p class="subtitle">PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME – VERIFIED PAYOUTS!</p>
+        
+        <div class="main-container">
+            <div class="grid-offers">
+                <div class="card">MYSTERY GAME <span class="amount">$250</span><small>[INSTALL, LEVEL 10, PHONE VERIFY]</small></div>
+                <div class="card">ULTIMATE CHALLENGE <span class="amount">$500</span><small>[INSTALL, LEVEL 10, PHONE VERIFY]</small></div>
+                <div class="card">SPEED RUN <span class="amount">$100</span><small>[INSTALL, LEVEL 10, PHONE VERIFY]</small></div>
+                <div class="card">SPEED RUN <span class="amount">$100</span><small>[INSTALL, LEVEL 10, PHONE VERIFY]</small></div>
+                <div class="card">SHOMFIGHT Y <span class="amount">$200</span><small>[INSTALL, LEVEL 10, PHONE VERIFY]</small></div>
+                <div class="card">POY HAIR <span class="amount">$100</span><small>[INSTALL, LEVEL 10, PHONE VERIFY]</small></div>
             </div>
 
-            <div class="payout-footer">
-                <p>PAYOUT METHODS</p>
-                <div class="payout-items">
-                    <div class="p-box">PAYPAL</div>
-                    <div class="p-box">BITCOIN</div>
-                    <div class="p-box">GIFT CARDS</div>
-                </div>
+            <div class="phone-section">
+                <img src="https://www.pngarts.com/files/8/Apple-iPhone-12-PNG-Image.png" class="phone-img">
+                <button class="btn-main-signup">SIGN UP</button>
             </div>
-        </section>
-    </div>
+        </div>
+
+        <div class="payout-footer">
+            <p>PAYOUT METHODS</p>
+            <div class="payout-items">
+                <div class="p-box">PAYPAL</div>
+                <div class="p-box">BITCOIN</div>
+                <div class="p-box">GIFT CARDS</div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
