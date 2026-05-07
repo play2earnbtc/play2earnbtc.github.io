@@ -79,47 +79,62 @@
         }
         .offer-card:hover { transform: translateY(-5px); border-color: var(--success-green); }
         
-        /* Game Icons */
+        /* Game Icons (UPDATED) */
         .card-icon {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 10px auto;
+            width: 80px; /* Increased width */
+            height: 80px; /* Increased height */
+            margin: 0 auto 15px auto;
             display: block;
-            border-radius: 8px; /* matching image */
+            border-radius: 12px; /* Smoother border */
             object-fit: cover;
+            border: 2px solid transparent; /* Prepare for hover effect */
+            transition: border-color 0.2s;
+        }
+        .offer-card:hover .card-icon {
+            border-color: var(--success-green); /* Hover border on icon */
         }
 
-        .card-label { font-size: 0.75rem; color: #fff; margin-bottom: 5px; display: block; font-weight: bold; text-transform: uppercase;}
+        .card-label { font-size: 0.8rem; color: #fff; margin-bottom: 5px; display: block; font-weight: bold; text-transform: uppercase;}
         .card-price { 
             display: block; 
             color: var(--success-green); 
-            font-size: 1.6rem; 
+            font-size: 1.8rem; 
             font-weight: 800;
             margin: 5px 0;
         }
-        .card-task { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; display: block;}
+        .card-task { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; display: block;}
 
-        /* Phone & Main Button */
-        .phone-wrapper { width: 300px; text-align: center; position: relative;}
-        .phone-img { width: 100%; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); }
+        /* Phone & Main Button (UPDATED) */
+        .phone-wrapper { width: 320px; text-align: center; position: relative;}
+        .phone-img { width: 100%; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transition: transform 0.3s ease; }
+        .phone-wrapper:hover .phone-img {
+            transform: scale(1.03); /* Subtle hover zoom */
+        }
         
         .btn-join {
             width: 100%;
             background: linear-gradient(to bottom, #ff9800, #f44336);
             color: white;
             padding: 18px;
-            font-size: 1.5rem;
+            font-size: 1.6rem; /* Slightly larger text */
             font-weight: bold;
             border: none;
-            border-radius: 8px;
-            margin-top: -50px; /* pull button up over image */
+            border-radius: 10px;
+            margin-top: -60px; /* pull button up over image */
             position: relative;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(244, 67, 54, 0.3);
+            box-shadow: 0 10px 25px rgba(244, 67, 54, 0.4);
             text-transform: uppercase;
             z-index: 10;
+            transition: box-shadow 0.2s, transform 0.1s;
         }
-        .btn-join:hover { opacity: 0.9; }
+        .btn-join:hover {
+            box-shadow: 0 15px 30px rgba(244, 67, 54, 0.5);
+        }
+        .btn-join:active {
+            transform: translateY(2px);
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.3);
+        }
 
         /* Payout Footer */
         .payout-methods {
@@ -150,7 +165,7 @@
         }
         @media (max-width: 650px) {
             .offers-grid { grid-template-columns: repeat(1, 100%); }
-            .phone-wrapper { width: 250px; }
+            .phone-wrapper { width: 280px; }
         }
     </style>
 </head>
@@ -171,7 +186,7 @@
         <div class="main-layout">
             <div class="offers-grid">
                 <div class="offer-card">
-                    <img src="https://i.imgur.com/8Qp4w1V.png" class="card-icon" alt="Mystery Game Icon">
+                    <img src="https://i.imgur.com/kP4F2T5.png" class="card-icon" alt="Mystery Game Icon">
                     <span class="card-label">MYSTERY GAME</span>
                     <span class="card-price">$250</span>
                     <span class="card-task">[INSTALL, LEVEL 10, PHONE VERIFY]</span>
@@ -186,43 +201,4 @@
                     <img src="https://i.imgur.com/K7M2W3D.png" class="card-icon" alt="Speed Run Icon">
                     <span class="card-label">SPEED RUN</span>
                     <span class="card-price">$100</span>
-                    <span class="card-task">[REACH TOP 10]</span>
-                </div>
-                <div class="offer-card">
-                    <img src="https://i.imgur.com/T0bS1Y4.png" class="card-icon" alt="Crypto Surge Icon">
-                    <span class="card-label">CRYPTO SURGE</span>
-                    <span class="card-price">$150</span>
-                    <span class="card-task">[FIRST DEPOSIT]</span>
-                </div>
-                <div class="offer-card">
-                    <img src="https://i.imgur.com/Hl8S4U9.png" class="card-icon" alt="Shomfight Y Icon">
-                    <span class="card-label">SHOMFIGHT Y</span>
-                    <span class="card-price">$200</span>
-                    <span class="card-task">[WIN 5 BATTLES]</span>
-                </div>
-                <div class="offer-card">
-                    <img src="https://i.imgur.com/N7W0C5V.png" class="card-icon" alt="Poy Hair Icon">
-                    <span class="card-label">POY HAIR</span>
-                    <span class="card-price">$100</span>
-                    <span class="card-task">[DAILY LOGIN]</span>
-                </div>
-            </div>
-
-            <div class="phone-wrapper">
-                <img src="https://i.imgur.com/j1N8S0C.png" class="phone-img" alt="Mobile App with Money">
-                <button class="btn-join">SIGN UP</button>
-            </div>
-        </div>
-
-        <div class="payout-methods">
-            <p style="color: var(--text-muted); font-weight: bold; text-transform: uppercase;">PAYOUT METHODS</p>
-            <div class="payout-container">
-                <div class="method-box">PAYPAL</div>
-                <div class="method-box">BITCOIN</div>
-                <div class="method-box">GIFT CARDS</div>
-            </div>
-        </div>
-    </section>
-
-</body>
-</html>
+                    <span class="card
