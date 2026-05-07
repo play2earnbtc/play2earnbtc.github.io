@@ -3,21 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P2E Rewards - Official Site</title>
-    <style>
-        body { font-family: sans-serif; text-align: center; background-color: #121212; color: #ffffff; padding: 50px; }
-        .card { max-width: 500px; margin: auto; background: #1e1e1e; padding: 30px; border-radius: 12px; border: 1px solid #333; }
-        h1 { color: #00ff88; }
-        .btn { display: block; background: #00ff88; color: #000; padding: 15px; margin: 20px 0; text-decoration: none; font-weight: bold; border-radius: 6px; }
-        .btn:hover { background: #00cc6e; }
-    </style>
+    <title>P2E Rewards - Play & Earn</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="card">
-        <h1>P2E Rewards</h1>
-        <p>Complete tasks and earn crypto rewards instantly.</p>
-        <a href="#" class="btn">GO TO TASK 1</a>
-        <a href="#" class="btn">GO TO TASK 2</a>
+
+    <div id="landing-page" class="page active">
+        <header>
+            <div class="logo">P2E Rewards</div>
+            <div class="auth-buttons">
+                <button class="btn-login" onclick="showDashboard()">SIGN IN</button>
+                <button class="btn-signup" onclick="showDashboard()">SIGN UP FOR FREE</button>
+            </div>
+        </header>
+
+        <main class="hero">
+            <h1>REALITY REWARDS:<br><span>TURN GAMING INTO REAL CASH!</span></h1>
+            <p>PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME</p>
+            
+            <div class="hero-content">
+                <div class="offer-cards">
+                    <div class="card">MYSTERY GAME <span>$250</span></div>
+                    <div class="card">ULTIMATE CHALLENGE <span>$500</span></div>
+                    <div class="card">SPEED RUN <span>$100</span></div>
+                </div>
+                <img src="https://via.placeholder.com/200x400?text=Phone+Mockup" alt="Phone App" class="phone-img">
+            </div>
+
+            <button class="main-signup-btn" onclick="showDashboard()">SIGN UP</button>
+
+            <div class="payout-methods">
+                <span>PAYOUT METHODS:</span>
+                <div class="icons">
+                    <i class="fab fa-paypal"></i> PAYPAL 
+                    <i class="fab fa-bitcoin"></i> BITCOIN
+                    <i class="fas fa-gift"></i> GIFT CARDS
+                </div>
+            </div>
+        </main>
     </div>
+
+    <div id="dashboard" class="page">
+        <aside class="sidebar">
+            <div class="brand">RewardJoy</div>
+            <nav>
+                <a href="#" class="active"><i class="fas fa-th-large"></i> DASHBOARD</a>
+                <a href="#"><i class="fas fa-list"></i> OFFERS</a>
+                <a href="#"><i class="fas fa-poll"></i> SURVEYS</a>
+                <a href="#"><i class="fas fa-tasks"></i> TASKS</a>
+                <a href="#"><i class="fas fa-users"></i> AFFILIATE</a>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <header class="dash-header">
+                <div class="user-stats">
+                    <span class="coins">1,200 COINS ($12.00)</span>
+                    <button class="btn-lang">USD</button>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <h3>Featured Offers</h3>
+                <div class="offers-row">
+                    <div class="offer-box">Game 1 <span>$185.00</span></div>
+                    <div class="offer-box">Game 2 <span>$320.00</span></div>
+                    <div class="offer-box">Game 3 <span>$318.00</span></div>
+                </div>
+
+                <h3>Offer Partners</h3>
+                <div class="partners-row">
+                    <div class="partner">TOROX</div>
+                    <div class="partner">ADGATE</div>
+                    <div class="partner">AYET</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showDashboard() {
+            document.getElementById('landing-page').classList.remove('active');
+            document.getElementById('dashboard').classList.add('active');
+        }
+    </script>
 </body>
 </html>
