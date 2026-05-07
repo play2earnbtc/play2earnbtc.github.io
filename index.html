@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P2E Rewards - Play & Earn</title>
+    <title>P2E Rewards</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div id="landing-page" class="page active">
+    <div id="landing-page">
         <header>
             <div class="logo">P2E Rewards</div>
             <div class="auth-buttons">
@@ -20,72 +20,71 @@
 
         <main class="hero">
             <h1>REALITY REWARDS:<br><span>TURN GAMING INTO REAL CASH!</span></h1>
-            <p>PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME</p>
+            <p class="sub-text">PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME</p>
             
-            <div class="hero-content">
+            <div class="hero-container">
                 <div class="offer-cards">
-                    <div class="card">MYSTERY GAME <span>$250</span></div>
-                    <div class="card">ULTIMATE CHALLENGE <span>$500</span></div>
-                    <div class="card">SPEED RUN <span>$100</span></div>
+                    <div class="card">
+                        MYSTERY GAME 
+                        <span class="price">$250</span>
+                    </div>
+                    <div class="card highlight">
+                        ULTIMATE CHALLENGE 
+                        <span class="price">$500</span>
+                    </div>
+                    <div class="card">
+                        SPEED RUN 
+                        <span class="price">$100</span>
+                    </div>
                 </div>
-                <img src="https://via.placeholder.com/200x400?text=Phone+Mockup" alt="Phone App" class="phone-img">
+                <div class="phone-wrapper">
+                    <img src="https://www.pngarts.com/files/8/Apple-iPhone-12-PNG-Image.png" alt="Phone" class="phone-img">
+                </div>
             </div>
 
             <button class="main-signup-btn" onclick="showDashboard()">SIGN UP</button>
 
             <div class="payout-methods">
-                <span>PAYOUT METHODS:</span>
-                <div class="icons">
-                    <i class="fab fa-paypal"></i> PAYPAL 
-                    <i class="fab fa-bitcoin"></i> BITCOIN
-                    <i class="fas fa-gift"></i> GIFT CARDS
+                <p>PAYOUT METHODS:</p>
+                <div class="payout-icons">
+                    <span><i class="fab fa-paypal"></i> PAYPAL</span>
+                    <span><i class="fab fa-bitcoin"></i> BITCOIN</span>
+                    <span><i class="fas fa-gift"></i> GIFT CARDS</span>
                 </div>
             </div>
         </main>
     </div>
 
-    <div id="dashboard" class="page">
-        <aside class="sidebar">
-            <div class="brand">RewardJoy</div>
-            <nav>
-                <a href="#" class="active"><i class="fas fa-th-large"></i> DASHBOARD</a>
-                <a href="#"><i class="fas fa-list"></i> OFFERS</a>
-                <a href="#"><i class="fas fa-poll"></i> SURVEYS</a>
-                <a href="#"><i class="fas fa-tasks"></i> TASKS</a>
-                <a href="#"><i class="fas fa-users"></i> AFFILIATE</a>
-            </nav>
-        </aside>
-
-        <section class="content">
-            <header class="dash-header">
-                <div class="user-stats">
-                    <span class="coins">1,200 COINS ($12.00)</span>
-                    <button class="btn-lang">USD</button>
+    <div id="dashboard" style="display:none;">
+        <div class="dashboard-layout">
+            <aside class="sidebar">
+                <div class="brand">RewardJoy</div>
+                <nav>
+                    <a href="#" class="active"><i class="fas fa-chart-line"></i> DASHBOARD</a>
+                    <a href="#"><i class="fas fa-gamepad"></i> OFFERS</a>
+                    <a href="#"><i class="fas fa-clipboard-list"></i> SURVEYS</a>
+                    <a href="#"><i class="fas fa-user-friends"></i> AFFILIATE</a>
+                </nav>
+            </aside>
+            <main class="dash-content">
+                <div class="dash-nav">
+                    <div class="balance">💰 1,200 COINS ($12.00)</div>
                 </div>
-            </header>
-
-            <div class="dashboard-grid">
-                <h3>Featured Offers</h3>
-                <div class="offers-row">
-                    <div class="offer-box">Game 1 <span>$185.00</span></div>
-                    <div class="offer-box">Game 2 <span>$320.00</span></div>
-                    <div class="offer-box">Game 3 <span>$318.00</span></div>
+                <h2>Featured Offers</h2>
+                <div class="offer-grid">
+                    <div class="offer-item">Torox Offer <span class="green-text">$185</span></div>
+                    <div class="offer-item">AdGate Task <span class="green-text">$320</span></div>
+                    <div class="offer-item">Ayet Studios <span class="green-text">$125</span></div>
                 </div>
-
-                <h3>Offer Partners</h3>
-                <div class="partners-row">
-                    <div class="partner">TOROX</div>
-                    <div class="partner">ADGATE</div>
-                    <div class="partner">AYET</div>
-                </div>
-            </div>
-        </section>
+            </main>
+        </div>
     </div>
 
     <script>
         function showDashboard() {
-            document.getElementById('landing-page').classList.remove('active');
-            document.getElementById('dashboard').classList.add('active');
+            document.getElementById('landing-page').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            window.scrollTo(0,0);
         }
     </script>
 </body>
