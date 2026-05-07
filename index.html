@@ -29,14 +29,17 @@
             padding: 1rem 5%;
             background: rgba(0,0,0,0.2);
         }
-        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; text-transform: uppercase; }
+        .auth-btns { display: flex; gap: 10px; align-items: center; }
         .auth-btns button {
             padding: 8px 20px;
             border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
             border: none;
+            transition: opacity 0.2s;
         }
+        .auth-btns button:hover { opacity: 0.8; }
         .btn-login { background: transparent; color: #fff; }
         .btn-signup-top { background: var(--primary-orange); color: #fff; }
 
@@ -53,16 +56,17 @@
         .main-layout {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            gap: 30px;
+            align-items: center;
+            gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
+            flex-wrap: wrap; /* responsive */
         }
 
         /* Offers Grid (3x2) */
         .offers-grid {
             display: grid;
-            grid-template-columns: repeat(3, 180px);
+            grid-template-columns: repeat(3, 190px);
             gap: 15px;
         }
         .offer-card {
@@ -70,22 +74,35 @@
             border: 1px solid #232b3e;
             border-radius: 12px;
             padding: 20px 10px;
-            transition: transform 0.2s;
+            transition: transform 0.2s, border-color 0.2s;
+            text-align: center;
         }
         .offer-card:hover { transform: translateY(-5px); border-color: var(--success-green); }
-        .card-label { font-size: 0.75rem; color: #fff; margin-bottom: 10px; display: block; font-weight: bold; }
+        
+        /* Game Icons */
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 10px auto;
+            display: block;
+            border-radius: 8px; /* matching image */
+            object-fit: cover;
+        }
+
+        .card-label { font-size: 0.75rem; color: #fff; margin-bottom: 5px; display: block; font-weight: bold; text-transform: uppercase;}
         .card-price { 
             display: block; 
             color: var(--success-green); 
             font-size: 1.6rem; 
             font-weight: 800;
-            margin: 10px 0;
+            margin: 5px 0;
         }
-        .card-task { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; }
+        .card-task { font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; display: block;}
 
         /* Phone & Main Button */
-        .phone-wrapper { width: 250px; text-align: center; }
+        .phone-wrapper { width: 300px; text-align: center; position: relative;}
         .phone-img { width: 100%; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); }
+        
         .btn-join {
             width: 100%;
             background: linear-gradient(to bottom, #ff9800, #f44336);
@@ -95,11 +112,14 @@
             font-weight: bold;
             border: none;
             border-radius: 8px;
-            margin-top: -40px;
+            margin-top: -50px; /* pull button up over image */
             position: relative;
             cursor: pointer;
             box-shadow: 0 10px 20px rgba(244, 67, 54, 0.3);
+            text-transform: uppercase;
+            z-index: 10;
         }
+        .btn-join:hover { opacity: 0.9; }
 
         /* Payout Footer */
         .payout-methods {
@@ -112,6 +132,7 @@
             justify-content: center;
             gap: 15px;
             margin-top: 15px;
+            flex-wrap: wrap;
         }
         .method-box {
             background: #111827;
@@ -120,11 +141,16 @@
             border-radius: 6px;
             font-weight: bold;
             font-size: 0.9rem;
+            text-transform: uppercase;
         }
 
-        @media (max-width: 900px) {
-            .main-layout { flex-direction: column; align-items: center; }
-            .offers-grid { grid-template-columns: repeat(2, 160px); }
+        /* Responsive adjustments */
+        @media (max-width: 950px) {
+            .offers-grid { grid-template-columns: repeat(2, 180px); }
+        }
+        @media (max-width: 650px) {
+            .offers-grid { grid-template-columns: repeat(1, 100%); }
+            .phone-wrapper { width: 250px; }
         }
     </style>
 </head>
@@ -140,50 +166,56 @@
 
     <section class="hero">
         <h1>REALITY REWARDS:<br><span>TURN GAMING INTO REAL CASH!</span></h1>
-        <p class="subtitle">PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME</p>
+        <p class="subtitle">PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME – VERIFIED PAYOUTS!</p>
 
         <div class="main-layout">
             <div class="offers-grid">
                 <div class="offer-card">
+                    <img src="https://i.imgur.com/8Qp4w1V.png" class="card-icon" alt="Mystery Game Icon">
                     <span class="card-label">MYSTERY GAME</span>
                     <span class="card-price">$250</span>
-                    <span class="card-task">INSTALL & LEVEL 10</span>
+                    <span class="card-task">[INSTALL, LEVEL 10, PHONE VERIFY]</span>
                 </div>
                 <div class="offer-card">
+                    <img src="https://i.imgur.com/w9Z8YvX.png" class="card-icon" alt="Ultimate Challenge Icon">
                     <span class="card-label">ULTIMATE CHALLENGE</span>
                     <span class="card-price">$500</span>
-                    <span class="card-task">COMPLETE MISSION</span>
+                    <span class="card-task">[COMPLETE MISSION]</span>
                 </div>
                 <div class="offer-card">
+                    <img src="https://i.imgur.com/K7M2W3D.png" class="card-icon" alt="Speed Run Icon">
                     <span class="card-label">SPEED RUN</span>
                     <span class="card-price">$100</span>
-                    <span class="card-task">REACH TOP 10</span>
+                    <span class="card-task">[REACH TOP 10]</span>
                 </div>
                 <div class="offer-card">
+                    <img src="https://i.imgur.com/T0bS1Y4.png" class="card-icon" alt="Crypto Surge Icon">
                     <span class="card-label">CRYPTO SURGE</span>
                     <span class="card-price">$150</span>
-                    <span class="card-task">FIRST DEPOSIT</span>
+                    <span class="card-task">[FIRST DEPOSIT]</span>
                 </div>
                 <div class="offer-card">
+                    <img src="https://i.imgur.com/Hl8S4U9.png" class="card-icon" alt="Shomfight Y Icon">
                     <span class="card-label">SHOMFIGHT Y</span>
                     <span class="card-price">$200</span>
-                    <span class="card-task">WIN 5 BATTLES</span>
+                    <span class="card-task">[WIN 5 BATTLES]</span>
                 </div>
                 <div class="offer-card">
+                    <img src="https://i.imgur.com/N7W0C5V.png" class="card-icon" alt="Poy Hair Icon">
                     <span class="card-label">POY HAIR</span>
                     <span class="card-price">$100</span>
-                    <span class="card-task">DAILY LOGIN</span>
+                    <span class="card-task">[DAILY LOGIN]</span>
                 </div>
             </div>
 
             <div class="phone-wrapper">
-                <img src="https://www.pngarts.com/files/8/Apple-iPhone-12-PNG-Image.png" class="phone-img" alt="Mobile App">
+                <img src="https://i.imgur.com/j1N8S0C.png" class="phone-img" alt="Mobile App with Money">
                 <button class="btn-join">SIGN UP</button>
             </div>
         </div>
 
         <div class="payout-methods">
-            <p style="color: var(--text-muted); font-weight: bold;">PAYOUT METHODS</p>
+            <p style="color: var(--text-muted); font-weight: bold; text-transform: uppercase;">PAYOUT METHODS</p>
             <div class="payout-container">
                 <div class="method-box">PAYPAL</div>
                 <div class="method-box">BITCOIN</div>
