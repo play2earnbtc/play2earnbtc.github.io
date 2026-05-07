@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Rewards - Play & Earn</title>
+    <style>
+        :root {
+            --primary-orange: #fd7e14;
+            --success-green: #28a745;
+            --bg-dark: #0a0e17;
+            --card-bg: #161c2d;
+            --text-muted: #6c757d;
+        }
 
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-dark);
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(0,0,0,0.2);
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; }
+        .auth-btns button {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-login { background: transparent; color: #fff; }
+        .btn-signup-top { background: var(--primary-orange); color: #fff; }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        h1 { font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; }
+        h1 span { color: var(--success-green); }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 40px; }
+
+        /* Main Container: Grid + Phone */
+        .main-layout {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Offers Grid (3x2) */
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 180px);
+            gap: 15px;
+        }
+        .offer-card {
+            background: var(--card-bg);
+            border: 1px solid #232b3e;
+            border-radius: 12px;
+            padding: 20px 10px;
+            transition: transform 0.2s;
+        }
+        .offer-card:hover { transform: translateY(-5px); border-color: var(--success-green); }
+        .card-label { font-size: 0.75rem; color: #fff; margin-bottom: 10px; display: block; font-weight: bold; }
+        .card-price { 
+            display: block; 
+            color: var(--success-green); 
+            font-size: 1.6rem; 
+            font-weight: 800;
+            margin: 10px 0;
+        }
+        .card-task { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; }
+
+        /* Phone & Main Button */
+        .phone-wrapper { width: 250px; text-align: center; }
+        .phone-img { width: 100%; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); }
+        .btn-join {
+            width: 100%;
+            background: linear-gradient(to bottom, #ff9800, #f44336);
+            color: white;
+            padding: 18px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            margin-top: -40px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(244, 67, 54, 0.3);
+        }
+
+        /* Payout Footer */
+        .payout-methods {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #1e2533;
+        }
+        .payout-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .method-box {
+            background: #111827;
+            border: 1px solid #1e2533;
+            padding: 12px 40px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout { flex-direction: column; align-items: center; }
+            .offers-grid { grid-template-columns: repeat(2, 160px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BITCOIN REWARDS</div>
+        <div class="auth-btns">
+            <button class="btn-login">SIGN IN</button>
+            <button class="btn-signup-top">JOIN FREE</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>REALITY REWARDS:<br><span>TURN GAMING INTO REAL CASH!</span></h1>
+        <p class="subtitle">PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME</p>
+
+        <div class="main-layout">
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <span class="card-label">MYSTERY GAME</span>
+                    <span class="card-price">$250</span>
+                    <span class="card-task">INSTALL & LEVEL 10</span>
+                </div>
+                <div class="offer-card">
+                    <span class="card-label">ULTIMATE CHALLENGE</span>
+                    <span class="card-price">$500</span>
+                    <span class="card-task">COMPLETE MISSION</span>
+                </div>
+                <div class="offer-card">
+                    <span class="card-label">SPEED RUN</span>
+                    <span class="card-price">$100</span>
+                    <span class="card-task">REACH TOP 10</span>
+                </div>
+                <div class="offer-card">
+                    <span class="card-label">CRYPTO SURGE</span>
+                    <span class="card-price">$150</span>
+                    <span class="card-task">FIRST DEPOSIT</span>
+                </div>
+                <div class="offer-card">
+                    <span class="card-label">SHOMFIGHT Y</span>
+                    <span class="card-price">$200</span>
+                    <span class="card-task">WIN 5 BATTLES</span>
+                </div>
+                <div class="offer-card">
+                    <span class="card-label">POY HAIR</span>
+                    <span class="card-price">$100</span>
+                    <span class="card-task">DAILY LOGIN</span>
+                </div>
+            </div>
+
+            <div class="phone-wrapper">
+                <img src="https://www.pngarts.com/files/8/Apple-iPhone-12-PNG-Image.png" class="phone-img" alt="Mobile App">
+                <button class="btn-join">SIGN UP</button>
+            </div>
+        </div>
+
+        <div class="payout-methods">
+            <p style="color: var(--text-muted); font-weight: bold;">PAYOUT METHODS</p>
+            <div class="payout-container">
+                <div class="method-box">PAYPAL</div>
+                <div class="method-box">BITCOIN</div>
+                <div class="method-box">GIFT CARDS</div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
