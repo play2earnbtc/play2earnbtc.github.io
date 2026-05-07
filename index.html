@@ -5,87 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P2E Rewards</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <div id="landing-page">
+    <div id="landing-page" class="active">
         <header>
             <div class="logo">P2E Rewards</div>
             <div class="auth-buttons">
-                <button class="btn-login" onclick="showDashboard()">SIGN IN</button>
-                <button class="btn-signup" onclick="showDashboard()">SIGN UP FOR FREE</button>
+                <button class="btn-signin">SIGN IN</button>
+                <button class="btn-signup-top">SIGN UP FOR FREE</button>
             </div>
         </header>
 
-        <main class="hero">
-            <h1>REALITY REWARDS:<br><span>TURN GAMING INTO REAL CASH!</span></h1>
-            <p class="sub-text">PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME</p>
-            
-            <div class="hero-container">
-                <div class="offer-cards">
-                    <div class="card">
-                        MYSTERY GAME 
-                        <span class="price">$250</span>
+        <section class="hero-section">
+            <div class="main-content">
+                <h1>REALITY REWARDS:<br><span>TURN GAMING INTO REAL CASH!</span></h1>
+                <p>PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME</p>
+                
+                <div class="content-wrapper">
+                    <div class="grid-container">
+                        <div class="offer-card">MYSTERY GAME <span class="price">$250</span></div>
+                        <div class="offer-card">ULTIMATE CHALLENGE <span class="price">$500</span></div>
+                        <div class="offer-card">SPEED RUN <span class="price">$100</span></div>
+                        <div class="offer-card">SPEED RUN <span class="price">$100</span></div>
+                        <div class="offer-card">SHOMFIGHT Y <span class="price">$200</span></div>
+                        <div class="offer-card">POY HAIR <span class="price">$100</span></div>
                     </div>
-                    <div class="card highlight">
-                        ULTIMATE CHALLENGE 
-                        <span class="price">$500</span>
-                    </div>
-                    <div class="card">
-                        SPEED RUN 
-                        <span class="price">$100</span>
+                    
+                    <div class="phone-area">
+                        <img src="https://www.pngarts.com/files/8/Apple-iPhone-12-PNG-Image.png" class="phone-img">
+                        <button class="big-signup-btn">SIGN UP</button>
                     </div>
                 </div>
-                <div class="phone-wrapper">
-                    <img src="https://www.pngarts.com/files/8/Apple-iPhone-12-PNG-Image.png" alt="Phone" class="phone-img">
+
+                <div class="payout-bar">
+                    <span>PAYOUT METHODS:</span>
+                    <div class="payout-icons">
+                        <div class="pay-box">PAYPAL</div>
+                        <div class="pay-box">BITCOIN</div>
+                        <div class="pay-box">GIFT CARDS</div>
+                    </div>
                 </div>
             </div>
-
-            <button class="main-signup-btn" onclick="showDashboard()">SIGN UP</button>
-
-            <div class="payout-methods">
-                <p>PAYOUT METHODS:</p>
-                <div class="payout-icons">
-                    <span><i class="fab fa-paypal"></i> PAYPAL</span>
-                    <span><i class="fab fa-bitcoin"></i> BITCOIN</span>
-                    <span><i class="fas fa-gift"></i> GIFT CARDS</span>
-                </div>
-            </div>
-        </main>
+        </section>
     </div>
-
-    <div id="dashboard" style="display:none;">
-        <div class="dashboard-layout">
-            <aside class="sidebar">
-                <div class="brand">RewardJoy</div>
-                <nav>
-                    <a href="#" class="active"><i class="fas fa-chart-line"></i> DASHBOARD</a>
-                    <a href="#"><i class="fas fa-gamepad"></i> OFFERS</a>
-                    <a href="#"><i class="fas fa-clipboard-list"></i> SURVEYS</a>
-                    <a href="#"><i class="fas fa-user-friends"></i> AFFILIATE</a>
-                </nav>
-            </aside>
-            <main class="dash-content">
-                <div class="dash-nav">
-                    <div class="balance">💰 1,200 COINS ($12.00)</div>
-                </div>
-                <h2>Featured Offers</h2>
-                <div class="offer-grid">
-                    <div class="offer-item">Torox Offer <span class="green-text">$185</span></div>
-                    <div class="offer-item">AdGate Task <span class="green-text">$320</span></div>
-                    <div class="offer-item">Ayet Studios <span class="green-text">$125</span></div>
-                </div>
-            </main>
-        </div>
-    </div>
-
-    <script>
-        function showDashboard() {
-            document.getElementById('landing-page').style.display = 'none';
-            document.getElementById('dashboard').style.display = 'block';
-            window.scrollTo(0,0);
-        }
-    </script>
 </body>
 </html>
