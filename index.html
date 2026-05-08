@@ -2,43 +2,190 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>P2E Rewards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Rewards - Fixed Layout</title>
     <style>
-        body { background-color: #0a0e17; color: white; font-family: sans-serif; margin: 0; }
-        .container { display: grid; grid-template-columns: 300px 1fr 400px; gap: 20px; padding: 40px; align-items: center; }
-        
-        /* رقم 1: منطقة التسجيل */
-        .login-box { background: #161c2d; padding: 20px; border-radius: 10px; border: 1px solid #2a3447; }
-        .login-box input { width: 100%; margin-bottom: 10px; padding: 10px; background: #0d121f; border: 1px solid #2a3447; color: white; }
-        
-        /* الوسط: النصوص */
-        .text-center { text-align: center; }
-        h1 span { color: #00ff85; }
+        :root {
+            --orange: #ff7a00;
+            --green: #00ff85;
+            --bg: #0a0e17;
+            --card-bg: #161c2d;
+            --input-bg: #0d121f;
+        }
 
-        /* رقم 2: منطقة صورة الخزنة */
-        .safe-zone { text-align: center; position: relative; }
-        .safe-image { width: 100%; max-width: 400px; }
-        .btn-signup { background: #ff7a00; border: none; color: white; padding: 20px 40px; font-size: 1.5rem; font-weight: bold; border-radius: 10px; cursor: pointer; margin-top: -50px; position: relative; }
+        body {
+            margin: 0;
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* الحاوية الرئيسية مقسمة لـ 3 أجزاء ثابتة */
+        .main-wrapper {
+            display: grid;
+            grid-template-columns: 320px 1fr 350px;
+            gap: 30px;
+            width: 95%;
+            max-width: 1300px;
+            align-items: center;
+        }
+
+        /* --- 1. منطقة تسجيل الدخول (اليسار) --- */
+        .auth-container {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #2a3447;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .auth-container h2 {
+            color: var(--orange);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .auth-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background: var(--input-bg);
+            border: 1px solid #2a3447;
+            border-radius: 6px;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: var(--orange);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* --- 2. منطقة المربعات والعروض (الوسط) --- */
+        .content-center {
+            text-align: center;
+        }
+
+        .content-center h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .content-center h1 span { color: var(--green); }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .offer-card {
+            background: var(--card-bg);
+            border: 1px solid #232b3e;
+            border-radius: 10px;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .offer-card:hover { border-color: var(--green); }
+
+        .offer-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .offer-card .reward {
+            display: block;
+            color: var(--green);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* --- 3. منطقة صورة الخزنة والاشتراك (اليمين) --- */
+        .visual-right {
+            text-align: center;
+            position: relative;
+        }
+
+        .safe-image-placeholder {
+            width: 100%;
+            max-width: 350px;
+            min-height: 250px;
+            /* مكان صورة الخزنة التي ستجلب رابطها */
+        }
+
+        .btn-signup-main {
+            background: linear-gradient(180deg, #ff9d00, #ff4500);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(255, 69, 0, 0.4);
+            margin-top: -40px;
+            position: relative;
+            width: 90%;
+        }
+
+        @media (max-width: 1000px) {
+            .main-wrapper { grid-template-columns: 1fr; }
+            .auth-container { order: 2; }
+            .content-center { order: 1; }
+            .visual-right { order: 3; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="login-box">
-            <h2 style="color:#ff7a00">SIGN IN</h2>
-            <input type="text" placeholder="Email">
+    <div class="main-wrapper">
+        
+        <div class="auth-container">
+            <h2>SIGN IN</h2>
+            <input type="text" placeholder="Username or Email">
             <input type="password" placeholder="Password">
-            <button style="width:100%; background:#ff7a00; border:none; padding:10px; color:white; font-weight:bold;">LOGIN</button>
+            <button class="btn-login">LOGIN</button>
+            <p style="font-size: 0.8rem; text-align: center; color: #6c757d; margin-top: 15px;">
+                Don't have an account? <a href="#" style="color: var(--orange); text-decoration: none;">Register here</a>
+            </p>
         </div>
 
-        <div class="text-center">
+        <div class="content-center">
             <h1>REALITY REWARDS:<br><span>TURN GAMING INTO CASH!</span></h1>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <img src="https://i.imgur.com/kP4F2T5.png" alt="icon">
+                    <div style="font-size: 0.8rem;">MYSTERY GAME</div>
+                    <span class="reward">$250</span>
+                </div>
+                <div class="offer-card">
+                    <img src="https://i.imgur.com/w9Z8YvX.png" alt="icon">
+                    <div style="font-size: 0.8rem;">ULTIMATE CHALLENGE</div>
+                    <span class="reward">$500</span>
+                </div>
+            </div>
         </div>
 
-        <div class="safe-zone">
-            <img src="ضع_رابط_صورة_الخزنة_هنا" class="safe-image" alt="Safe and Money">
-            <button class="btn-signup">SIGN UP NOW</button>
+        <div class="visual-right">
+            <img src="https://via.placeholder.com/350x300?text=Safe+Image+Link+Here" class="safe-image-placeholder" alt="Safe and Money">
+            <button class="btn-signup-main">SIGN UP NOW</button>
         </div>
+
     </div>
 
 </body>
