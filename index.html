@@ -2,163 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P2E - Reality Rewards</title>
+    <title>P2E Rewards</title>
     <style>
-        :root {
-            --orange: #ff7a00;
-            --green: #00ff85;
-            --dark: #0a0e17;
-            --card: #161c2d;
-        }
-
-        body {
-            margin: 0;
-            background: var(--dark);
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* تقسيم الصفحة الرئيسي */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 350px 1fr 400px; /* يسار (1) - وسط - يمين (2) */
-            min-height: 100vh;
-            gap: 20px;
-            padding: 20px;
-            align-items: center;
-        }
-
-        /* المنطقة 1: تسجيل الدخول (يسار) */
-        .auth-zone {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #2a3447;
-            text-align: center;
-        }
-
-        .auth-zone h2 { color: var(--orange); margin-bottom: 20px; }
+        body { background-color: #0a0e17; color: white; font-family: sans-serif; margin: 0; }
+        .container { display: grid; grid-template-columns: 300px 1fr 400px; gap: 20px; padding: 40px; align-items: center; }
         
-        .input-group { margin-bottom: 15px; }
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            background: #0d121f;
-            border: 1px solid #2a3447;
-            color: white;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .btn-auth {
-            width: 100%;
-            padding: 15px;
-            background: var(--orange);
-            border: none;
-            color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* المنطقة الوسطى: العروض */
-        .offers-zone { text-align: center; }
-        .hero-title { font-size: 2.2rem; font-weight: 900; margin-bottom: 30px; }
-        .hero-title span { color: var(--green); }
-
-        .offers-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .card {
-            background: var(--card);
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid #232b3e;
-        }
-
-        .card img { width: 60px; height: 60px; margin-bottom: 10px; }
-        .price { color: var(--green); font-weight: bold; font-size: 1.4rem; display: block; }
-
-        /* المنطقة 2: صورة الخزنة (يمين) */
-        .visual-zone {
-            position: relative;
-            text-align: right;
-        }
-
-        .safe-img {
-            width: 100%;
-            max-width: 450px;
-            filter: drop-shadow(0 0 30px rgba(0, 255, 133, 0.2));
-            transition: transform 0.3s;
-        }
+        /* رقم 1: منطقة التسجيل */
+        .login-box { background: #161c2d; padding: 20px; border-radius: 10px; border: 1px solid #2a3447; }
+        .login-box input { width: 100%; margin-bottom: 10px; padding: 10px; background: #0d121f; border: 1px solid #2a3447; color: white; }
         
-        .safe-img:hover { transform: scale(1.05); }
+        /* الوسط: النصوص */
+        .text-center { text-align: center; }
+        h1 span { color: #00ff85; }
 
-        .signup-overlay {
-            background: linear-gradient(180deg, #ff9d00, #ff4500);
-            padding: 20px 40px;
-            font-size: 1.8rem;
-            font-weight: 900;
-            border-radius: 10px;
-            border: none;
-            color: white;
-            margin-top: -60px;
-            position: relative;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.4);
-        }
-
-        @media (max-width: 1100px) {
-            .main-layout { grid-template-columns: 1fr; }
-            .visual-zone { order: -1; text-align: center; }
-        }
+        /* رقم 2: منطقة صورة الخزنة */
+        .safe-zone { text-align: center; position: relative; }
+        .safe-image { width: 100%; max-width: 400px; }
+        .btn-signup { background: #ff7a00; border: none; color: white; padding: 20px 40px; font-size: 1.5rem; font-weight: bold; border-radius: 10px; cursor: pointer; margin-top: -50px; position: relative; }
     </style>
 </head>
 <body>
 
-    <div class="main-layout">
-        
-        <div class="auth-zone">
-            <h2>SIGN IN</h2>
-            <div class="input-group">
-                <input type="text" placeholder="Username or Email">
-            </div>
-            <div class="input-group">
-                <input type="password" placeholder="Password">
-            </div>
-            <button class="btn-auth">LOGIN</button>
-            <p style="font-size: 0.8rem; color: #6c757d; margin-top: 15px;">
-                Don't have an account? <span style="color: var(--orange);">Register here</span>
-            </p>
+    <div class="container">
+        <div class="login-box">
+            <h2 style="color:#ff7a00">SIGN IN</h2>
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <button style="width:100%; background:#ff7a00; border:none; padding:10px; color:white; font-weight:bold;">LOGIN</button>
         </div>
 
-        <div class="offers-zone">
-            <h1 class="hero-title">REALITY REWARDS:<br><span>TURN GAMING INTO CASH!</span></h1>
-            
-            <div class="offers-grid">
-                <div class="card">
-                    <img src="mystery-icon.png" alt="?">
-                    <small>MYSTERY GAME</small>
-                    <span class="price">$250</span>
-                </div>
-                <div class="card">
-                    <img src="fire-icon.png" alt="!">
-                    <small>ULTIMATE CHALLENGE</small>
-                    <span class="price">$500</span>
-                </div>
-            </div>
+        <div class="text-center">
+            <h1>REALITY REWARDS:<br><span>TURN GAMING INTO CASH!</span></h1>
         </div>
 
-        <div class="visual-zone">
-            <img src="safe.png" alt="Money Safe" class="safe-img">
-            <button class="signup-overlay">SIGN UP NOW</button>
+        <div class="safe-zone">
+            <img src="ضع_رابط_صورة_الخزنة_هنا" class="safe-image" alt="Safe and Money">
+            <button class="btn-signup">SIGN UP NOW</button>
         </div>
-
     </div>
 
 </body>
