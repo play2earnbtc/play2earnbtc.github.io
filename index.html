@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reality Rewards - Professional Edition</title>
+    <title>Reality Rewards - Professional Final</title>
     <style>
         :root {
             --orange: #ff7a00;
@@ -16,7 +16,6 @@
 
         body {
             margin: 0;
-            padding: 0;
             background-color: var(--dark-bg);
             color: white;
             font-family: 'Segoe UI', sans-serif;
@@ -24,10 +23,8 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
-        /* الحاوية الرئيسية مقسمة لضمان عدم تداخل العناصر */
         .page-grid {
             display: grid;
             grid-template-columns: 320px 1fr 320px;
@@ -37,7 +34,7 @@
             align-items: center;
         }
 
-        /* --- الجانب الأيسر (1): تسجيل الدخول الاحترافي --- */
+        /* رقم 1: تسجيل الدخول الاحترافي */
         .auth-panel {
             background: var(--card-bg);
             padding: 30px;
@@ -52,7 +49,6 @@
             text-align: center;
             margin-bottom: 25px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .input-field {
@@ -64,13 +60,6 @@
             border-radius: 8px;
             color: white;
             box-sizing: border-box;
-            transition: 0.3s;
-        }
-
-        .input-field:focus {
-            border-color: var(--orange);
-            outline: none;
-            box-shadow: 0 0 10px rgba(255, 122, 0, 0.2);
         }
 
         .btn-login {
@@ -83,10 +72,9 @@
             border-radius: 8px;
             cursor: pointer;
             text-transform: uppercase;
-            box-shadow: 0 5px 15px rgba(255, 78, 0, 0.3);
         }
 
-        /* --- الوسط: العنوان والمربعات المحددة --- */
+        /* الوسط: محتوى العروض المربع */
         .main-content {
             text-align: center;
         }
@@ -94,7 +82,6 @@
         .main-content h1 {
             font-size: 2.5rem;
             font-weight: 900;
-            margin-bottom: 5px;
         }
 
         .main-content h1 span { color: var(--green); }
@@ -111,15 +98,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 25px;
-            transition: transform 0.3s, border-color 0.3s;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--green);
-        }
-
-        .card img { width: 55px; height: 55px; margin-bottom: 15px; }
 
         .card .reward {
             display: block;
@@ -128,17 +107,9 @@
             font-weight: 800;
         }
 
-        /* --- الجانب الأيمن (2): الجذب البصري والاشتراك --- */
+        /* رقم 2: الجانب الأيمن للاشتراك */
         .visual-side {
             text-align: center;
-        }
-
-        .safe-placeholder {
-            width: 100%;
-            height: auto;
-            max-width: 350px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
         }
 
         .btn-signup-main {
@@ -155,41 +126,29 @@
             text-transform: uppercase;
         }
 
-        /* التجاوب مع الشاشات الصغيرة */
         @media (max-width: 1100px) {
             .page-grid { grid-template-columns: 1fr; }
-            .auth-panel { order: 2; width: 100%; max-width: 400px; margin: 0 auto; }
-            .main-content { order: 1; }
-            .visual-side { order: 3; }
         }
     </style>
 </head>
 <body>
 
     <div class="page-grid">
-        
         <div class="auth-panel">
             <h2>Sign In</h2>
             <input type="text" class="input-field" placeholder="Username or Email">
             <input type="password" class="input-field" placeholder="Password">
             <button class="btn-login">Login</button>
-            <p style="font-size: 0.85rem; text-align: center; color: #8892b0; margin-top: 15px;">
-                Don't have an account? <span style="color: var(--orange); cursor: pointer;">Register here</span>
-            </p>
         </div>
 
         <div class="main-content">
             <h1>REALITY REWARDS:<br><span>TURN GAMING INTO CASH!</span></h1>
-            <p style="color: #8892b0; font-weight: 600;">PLAY MOBILE GAMES & EARN UP TO $500</p>
-            
             <div class="offers-grid">
                 <div class="card">
-                    <img src="https://i.imgur.com/kP4F2T5.png" alt="icon">
                     <div style="font-size: 0.9rem; font-weight: bold;">MYSTERY GAME</div>
                     <span class="reward">$250</span>
                 </div>
                 <div class="card">
-                    <img src="https://i.imgur.com/w9Z8YvX.png" alt="icon">
                     <div style="font-size: 0.9rem; font-weight: bold;">ULTIMATE CHALLENGE</div>
                     <span class="reward">$500</span>
                 </div>
@@ -197,10 +156,9 @@
         </div>
 
         <div class="visual-side">
-            <img src="https://via.placeholder.com/350x300/161c2d/ffffff?text=SAFE+IMAGE+GOES+HERE" class="safe-placeholder" alt="Safe Money">
+            <img src="YOUR_SAFE_IMAGE_URL" style="width:100%; margin-bottom:20px;" alt="Safe">
             <button class="btn-signup-main">Sign Up Now</button>
         </div>
-
     </div>
 
 </body>
