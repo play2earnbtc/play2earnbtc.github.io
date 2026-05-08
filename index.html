@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reality Rewards - Final Layout</title>
+    <title>Reality Rewards - Production Build</title>
     <style>
         :root {
             --orange: #ff7a00;
@@ -11,51 +11,54 @@
             --dark-bg: #0b0f1a;
             --card-bg: #161c2d;
             --input-bg: #0d121f;
+            --border: #2a3447;
         }
 
         body {
             margin: 0;
+            padding: 0;
             background-color: var(--dark-bg);
             color: white;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        /* الحاوية الرئيسية: توزيع ثلاثي الأبعاد */
-        .page-wrapper {
+        /* الحاوية الرئيسية مقسمة لـ 3 أعمدة ثابتة كما في المخطط */
+        .layout-grid {
             display: grid;
-            grid-template-columns: 320px 1fr 350px; /* يسار (1) - وسط - يمين (2) */
-            gap: 40px;
+            grid-template-columns: 320px 1fr 340px;
+            gap: 30px;
             width: 95%;
             max-width: 1400px;
             align-items: center;
         }
 
-        /* 1. المنطقة اليسرى: تسجيل الدخول الاحترافي */
-        .auth-panel {
+        /* --- 1. قسم تسجيل الدخول (اليسار) --- */
+        .login-section {
             background: var(--card-bg);
             padding: 30px;
             border-radius: 15px;
-            border: 1px solid #2a3447;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         }
 
-        .auth-panel h2 {
+        .login-section h2 {
             color: var(--orange);
             text-align: center;
             margin-bottom: 25px;
+            font-size: 1.6rem;
             text-transform: uppercase;
         }
 
-        .input-field {
+        .input-group {
             width: 100%;
             padding: 14px;
             margin-bottom: 15px;
             background: var(--input-bg);
-            border: 1px solid #2a3447;
+            border: 1px solid var(--border);
             border-radius: 8px;
             color: white;
             box-sizing: border-box;
@@ -70,19 +73,23 @@
             font-weight: 800;
             border-radius: 8px;
             cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 78, 0, 0.3);
         }
 
-        /* المنطقة الوسطى: المربعات (ثابتة بدون تشوه) */
-        .center-content {
+        /* --- الوسط: شبكة العروض --- */
+        .offers-section {
             text-align: center;
         }
 
-        .center-content h1 {
-            font-size: 2.5rem;
+        .offers-section h1 {
+            font-size: 2.6rem;
+            font-weight: 900;
             margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
-        .center-content h1 span { color: var(--green); }
+        .offers-section h1 span { color: var(--green); }
 
         .offers-grid {
             display: grid;
@@ -92,31 +99,36 @@
 
         .offer-card {
             background: var(--card-bg);
-            border: 1px solid #232b3e;
+            border: 1px solid var(--border);
             border-radius: 12px;
             padding: 25px;
+            transition: 0.3s;
         }
 
-        .offer-card .reward {
+        .offer-card:hover { border-color: var(--green); transform: translateY(-5px); }
+
+        .offer-card .reward-value {
             display: block;
             color: var(--green);
             font-size: 1.8rem;
             font-weight: 800;
+            margin-top: 5px;
         }
 
-        /* 2. المنطقة اليمنى: الخزنة والاشتراك */
-        .visual-panel {
+        /* --- 2. قسم الجذب والاشتراك (اليمين) --- */
+        .cta-section {
             text-align: center;
-            position: relative;
         }
 
-        .safe-img {
+        .visual-asset {
             width: 100%;
             max-width: 350px;
-            margin-bottom: 20px;
+            height: auto;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 15px 30px rgba(0,0,0,0.6));
         }
 
-        .btn-signup-main {
+        .btn-main-signup {
             width: 100%;
             padding: 20px;
             background: linear-gradient(180deg, #ff9d00, #ff4500);
@@ -126,47 +138,58 @@
             font-weight: 900;
             border-radius: 12px;
             cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.5);
             text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.4);
         }
 
-        /* للتوافق مع الجوال */
+        /*Responsive*/
         @media (max-width: 1100px) {
-            .page-wrapper { grid-template-columns: 1fr; }
+            .layout-grid { grid-template-columns: 1fr; }
+            .login-section { order: 2; width: 100%; max-width: 400px; margin: 0 auto; }
+            .offers-section { order: 1; }
+            .cta-section { order: 3; }
         }
     </style>
 </head>
 <body>
 
-    <div class="page-wrapper">
+    <div class="layout-grid">
         
-        <div class="auth-panel">
-            <h2>Sign In</h2>
-            <input type="text" class="input-field" placeholder="Username or Email">
-            <input type="password" class="input-field" placeholder="Password">
-            <button class="btn-login">Login</button>
-            <p style="font-size: 0.8rem; text-align: center; color: #8892b0; margin-top: 15px;">
-                Don't have an account? <span style="color: var(--orange); cursor: pointer;">Register here</span>
+        <div class="login-section">
+            <h2>SIGN IN</h2>
+            <input type="text" class="input-group" placeholder="Username or Email">
+            <input type="password" class="input-group" placeholder="Password">
+            <button class="btn-login">LOGIN</button>
+            <p style="font-size: 0.85rem; text-align: center; color: #8892b0; margin-top: 15px;">
+                Don't have an account? <span style="color: var(--orange); cursor: pointer;">Register</span>
             </p>
         </div>
 
-        <div class="center-content">
+        <div class="offers-section">
             <h1>REALITY REWARDS:<br><span>TURN GAMING INTO CASH!</span></h1>
             <div class="offers-grid">
                 <div class="offer-card">
-                    <div style="font-size: 0.9rem; font-weight: bold;">MYSTERY GAME</div>
-                    <span class="reward">$250</span>
+                    <div style="font-size: 0.85rem; color: #8892b0;">MYSTERY GAME</div>
+                    <span class="reward-value">$250</span>
                 </div>
                 <div class="offer-card">
-                    <div style="font-size: 0.9rem; font-weight: bold;">ULTIMATE CHALLENGE</div>
-                    <span class="reward">$500</span>
+                    <div style="font-size: 0.85rem; color: #8892b0;">ULTIMATE CHALLENGE</div>
+                    <span class="reward-value">$500</span>
+                </div>
+                <div class="offer-card">
+                    <div style="font-size: 0.85rem; color: #8892b0;">CRYPTO SURGE</div>
+                    <span class="reward-value">$150</span>
+                </div>
+                <div class="offer-card">
+                    <div style="font-size: 0.85rem; color: #8892b0;">DAILY LOGIN</div>
+                    <span class="reward-value">$100</span>
                 </div>
             </div>
         </div>
 
-        <div class="visual-panel">
-            <img src="ضع_رابط_صورة_الخزنة_هنا" class="safe-img" alt="Safe Money">
-            <button class="btn-signup-main">Sign Up Now</button>
+        <div class="cta-section">
+            <img src="https://i.imgur.com/your_safe_image.png" class="visual-asset" alt="Safe & Cash">
+            <button class="btn-main-signup">SIGN UP NOW</button>
         </div>
 
     </div>
