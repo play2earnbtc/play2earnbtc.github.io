@@ -3,172 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P2E Rewards - Professional Layout</title>
+    <title>P2E - Reality Rewards</title>
     <style>
         :root {
             --orange: #ff7a00;
             --green: #00ff85;
-            --dark-blue: #0b111d;
-            --card-bg: rgba(22, 28, 45, 0.9);
+            --dark: #0a0e17;
+            --card: #161c2d;
         }
 
         body {
             margin: 0;
-            background-color: var(--dark-blue);
+            background: var(--dark);
             color: white;
-            font-family: 'Arial Black', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
         }
 
-        .main-container {
-            width: 95%;
-            max-width: 1000px;
+        /* تقسيم الصفحة الرئيسي */
+        .main-layout {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 350px 1fr 400px; /* يسار (1) - وسط - يمين (2) */
+            min-height: 100vh;
             gap: 20px;
             padding: 20px;
-            background: radial-gradient(circle at center, #16243d 0%, #0b111d 100%);
-            border-radius: 20px;
+            align-items: center;
         }
 
-        /* الجزء الأيسر: العناوين والبطاقات */
-        .content-side {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        /* المنطقة 1: تسجيل الدخول (يسار) */
+        .auth-zone {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #2a3447;
+            text-align: center;
         }
 
-        .hero-text h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            line-height: 1.1;
+        .auth-zone h2 { color: var(--orange); margin-bottom: 20px; }
+        
+        .input-group { margin-bottom: 15px; }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            background: #0d121f;
+            border: 1px solid #2a3447;
+            color: white;
+            border-radius: 5px;
+            box-sizing: border-box;
         }
 
-        .hero-text span { color: var(--green); }
+        .btn-auth {
+            width: 100%;
+            padding: 15px;
+            background: var(--orange);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* المنطقة الوسطى: العروض */
+        .offers-zone { text-align: center; }
+        .hero-title { font-size: 2.2rem; font-weight: 900; margin-bottom: 30px; }
+        .hero-title span { color: var(--green); }
 
         .offers-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
         }
 
-        .offer-card {
-            background: var(--card-bg);
-            border: 1px solid #2a3447;
+        .card {
+            background: var(--card);
+            padding: 15px;
             border-radius: 10px;
-            padding: 15px 5px;
-            text-align: center;
+            border: 1px solid #232b3e;
         }
 
-        .offer-card img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 10px;
-        }
+        .card img { width: 60px; height: 60px; margin-bottom: 10px; }
+        .price { color: var(--green); font-weight: bold; font-size: 1.4rem; display: block; }
 
-        .price {
-            display: block;
-            color: var(--green);
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-
-        .requirements {
-            font-size: 0.5rem;
-            color: #8892b0;
-            text-transform: uppercase;
-        }
-
-        /* الجزء الأيمن: الهاتف والمال وزر الاشتراك */
-        .visual-side {
+        /* المنطقة 2: صورة الخزنة (يمين) */
+        .visual-zone {
             position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            text-align: right;
         }
 
-        .phone-money-img {
+        .safe-img {
             width: 100%;
-            z-index: 1;
+            max-width: 450px;
+            filter: drop-shadow(0 0 30px rgba(0, 255, 133, 0.2));
+            transition: transform 0.3s;
         }
+        
+        .safe-img:hover { transform: scale(1.05); }
 
-        .signup-btn {
-            background: linear-gradient(180deg, #ff9d00 0%, #ff5c00 100%);
+        .signup-overlay {
+            background: linear-gradient(180deg, #ff9d00, #ff4500);
+            padding: 20px 40px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            border-radius: 10px;
             border: none;
             color: white;
-            padding: 15px 40px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            border-radius: 10px;
+            margin-top: -60px;
+            position: relative;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(255, 92, 0, 0.4);
-            margin-top: -50px; /* لسحب الزر فوق الصورة */
-            z-index: 2;
-            width: 80%;
-            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.4);
         }
 
-        .payout-methods {
-            grid-column: span 2;
-            text-align: center;
-            margin-top: 20px;
-            border-top: 1px solid #2a3447;
-            padding-top: 20px;
-        }
-
-        /* لجعل الموقع متجاوب مع الموبايل */
-        @media (max-width: 768px) {
-            .main-container { grid-template-columns: 1fr; }
-            .offers-grid { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 1100px) {
+            .main-layout { grid-template-columns: 1fr; }
+            .visual-zone { order: -1; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <div class="content-side">
-            <div class="hero-text">
-                <h1>REALITY REWARDS:<br><span>TURN GAMING INTO REAL CASH!</span></h1>
-                <p style="font-size: 0.8rem; color: #8892b0;">PLAY TOP MOBILE GAMES & EARN UP TO $500 PER GAME</p>
+    <div class="main-layout">
+        
+        <div class="auth-zone">
+            <h2>SIGN IN</h2>
+            <div class="input-group">
+                <input type="text" placeholder="Username or Email">
             </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password">
+            </div>
+            <button class="btn-auth">LOGIN</button>
+            <p style="font-size: 0.8rem; color: #6c757d; margin-top: 15px;">
+                Don't have an account? <span style="color: var(--orange);">Register here</span>
+            </p>
+        </div>
 
+        <div class="offers-zone">
+            <h1 class="hero-title">REALITY REWARDS:<br><span>TURN GAMING INTO CASH!</span></h1>
+            
             <div class="offers-grid">
-                <div class="offer-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5726/5726678.png" alt="icon">
-                    <div style="font-size: 0.7rem;">MYSTERY GAME</div>
+                <div class="card">
+                    <img src="mystery-icon.png" alt="?">
+                    <small>MYSTERY GAME</small>
                     <span class="price">$250</span>
-                    <span class="requirements">[INSTALL & LEVEL 10]</span>
                 </div>
-                <div class="offer-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1251/1251786.png" alt="icon">
-                    <div style="font-size: 0.7rem;">ULTIMATE CHALLENGE</div>
+                <div class="card">
+                    <img src="fire-icon.png" alt="!">
+                    <small>ULTIMATE CHALLENGE</small>
                     <span class="price">$500</span>
-                    <span class="requirements">[COMPLETE MISSION]</span>
-                </div>
-                <div class="offer-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5334/5334814.png" alt="icon">
-                    <div style="font-size: 0.7rem;">SPEED RUN</div>
-                    <span class="price">$100</span>
-                    <span class="requirements">[REACH TOP 10]</span>
                 </div>
             </div>
         </div>
 
-        <div class="visual-side">
-            <img src="https://i.ibb.co/mS7S8m4/phone-money-combined.png" class="phone-money-img" alt="Phone and Cash">
-            <button class="signup-btn">SIGN UP</button>
+        <div class="visual-zone">
+            <img src="safe.png" alt="Money Safe" class="safe-img">
+            <button class="signup-overlay">SIGN UP NOW</button>
         </div>
 
-        <div class="payout-methods">
-            <p style="font-size: 0.8rem; color: #8892b0;">PAYOUT METHODS</p>
-            <div style="display: flex; justify-content: center; gap: 20px;">
-                <span>PAYPAL</span> <span>BITCOIN</span> <span>GIFT CARDS</span>
-            </div>
-        </div>
     </div>
 
 </body>
