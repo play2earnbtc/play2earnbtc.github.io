@@ -1,140 +1,63 @@
-<div id="status-bar-v2">
-    <div class="site-meta">
-        <div class="since-tag">EST. 2017</div>
-        <div class="total-payout">
-            <span class="label">TOTAL PAID</span>
-            <span class="amount">$3,510,240</span>
+<nav id="top-nav">
+    <div class="nav-left">
+        <img src="images/logo-removebg-preview.png" alt="Play2Earn VIP" class="nav-logo">
+        <ul class="nav-links">
+            <li class="active"><i class="fa fa-gamepad"></i> Gagner</li>
+            <li><i class="fa fa-exchange"></i> Cashout</li>
+            <li><i class="fa fa-trophy"></i> Récompenses</li>
+        </ul>
+    </div>
+    <div class="nav-right">
+        <div class="site-stats">
+            <span class="stat-item">Est. 2017</span>
+            <span class="stat-divider">|</span>
+            <span class="stat-item">Total Paid: <strong style="color: #00ff85;">$3,510,240</strong></span>
         </div>
+        <button class="auth-btn">Verify Account</button>
     </div>
-    
-    <div class="live-activity">
-        <span class="pulse-icon"></span>
-        <span class="count">3,124</span>
-        <span class="online-text">PLAYERS ONLINE</span>
-    </div>
+</nav>
 
-    <div class="user-wallet">
-        <div class="wallet-icon">
-            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21,18V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H19A2,2 0 0,1 21,5V6H12C10.89,6 10,6.9 10,8V16A2,2 0 0,0 12,18H21M12,16H22V8H12V16M16,13.5A1.5,1.5 0 0,1 14.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,12A1.5,1.5 0 0,1 16,13.5Z" /></svg>
-        </div>
-        <div class="wallet-info">
-            <span class="p-label">PENDING</span>
-            <span class="p-amount">$12.50</span>
-        </div>
+<div id="live-payouts">
+    <div class="ticker-wrapper">
+        <div class="ticker-item"><img src="images/paypal.png"> User_2291: <strong>$25.00</strong></div>
+        <div class="ticker-item"><img src="images/litecoin.png"> Arbi_XX: <strong>$14.20</strong></div>
+        <div class="ticker-item"><img src="images/visa.png"> King_Earn: <strong>$50.00</strong></div>
+        <div class="ticker-item"><img src="images/paypal.png"> User_881: <strong>$10.50</strong></div>
+        <div class="ticker-item"><img src="images/bitcoin.png"> Dev_Gamer: <strong>$105.00</strong></div>
     </div>
 </div>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;900&display=swap');
-
-    #status-bar-v2 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 65px;
-        background: rgba(10, 12, 16, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 2px solid #fca311;
+    /* تنسيق الناف بار ليكون مطابقاً لـ FreeCash */
+    #top-nav {
+        background: #1a1d23;
+        height: 70px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 30px;
-        z-index: 10000;
-        font-family: 'Inter', sans-serif;
-        color: white;
+        padding: 0 40px;
+        border-bottom: 1px solid #2d333b;
+        position: fixed;
+        top: 0; width: 100%; z-index: 10001;
     }
+    .nav-logo { height: 45px; }
+    .nav-links { list-style: none; display: flex; margin-left: 30px; margin-bottom:0; }
+    .nav-links li { color: #9299a4; padding: 0 15px; font-weight: bold; cursor: pointer; font-size: 14px; }
+    .nav-links li.active { color: #00ff85; border-bottom: 2px solid #00ff85; height: 70px; line-height: 70px; }
+    
+    .nav-right { display: flex; align-items: center; }
+    .site-stats { color: #5d6671; font-size: 12px; margin-right: 20px; font-family: sans-serif; }
+    .auth-btn { background: #00ff85; color: #000; border: none; padding: 8px 20px; border-radius: 5px; font-weight: 900; cursor: pointer; }
 
-    .since-tag {
-        background: #fca311;
-        color: #000;
-        font-weight: 900;
-        font-size: 10px;
-        padding: 2px 6px;
-        border-radius: 3px;
-        width: fit-content;
-        margin-bottom: 2px;
+    /* تنسيق نشرة السحوبات الحية */
+    #live-payouts { background: #14171c; height: 35px; position: fixed; top: 70px; width: 100%; z-index: 10000; overflow: hidden; border-bottom: 1px solid #2d333b; }
+    .ticker-wrapper { display: flex; white-space: nowrap; animation: ticker 30s linear infinite; line-height: 35px; }
+    .ticker-item { color: #fff; font-size: 12px; margin-right: 50px; display: flex; align-items: center; }
+    .ticker-item img { height: 15px; margin-right: 8px; }
+    
+    @keyframes ticker {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
     }
-
-    .total-payout .label {
-        display: block;
-        font-size: 9px;
-        color: #888;
-        letter-spacing: 1px;
-    }
-
-    .total-payout .amount {
-        font-family: 'Orbitron', sans-serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #fff;
-        text-shadow: 0 0 10px rgba(252, 163, 17, 0.3);
-    }
-
-    .live-activity {
-        display: flex;
-        align-items: center;
-        background: rgba(0, 255, 133, 0.1);
-        padding: 8px 15px;
-        border-radius: 50px;
-        border: 1px solid rgba(0, 255, 133, 0.2);
-    }
-
-    .pulse-icon {
-        height: 8px;
-        width: 8px;
-        background: #00ff85;
-        border-radius: 50%;
-        margin-right: 10px;
-        box-shadow: 0 0 10px #00ff85;
-        animation: pulse-glow 1.5s infinite;
-    }
-
-    .live-activity .count {
-        font-weight: 900;
-        margin-right: 5px;
-        color: #00ff85;
-    }
-
-    .live-activity .online-text {
-        font-size: 11px;
-        font-weight: 700;
-        color: #00ff85;
-    }
-
-    .user-wallet {
-        display: flex;
-        align-items: center;
-        background: #1a1a1a;
-        padding: 5px 15px;
-        border-radius: 8px;
-        border: 1px solid #333;
-    }
-
-    .wallet-icon {
-        color: #fca311;
-        margin-right: 12px;
-    }
-
-    .p-label {
-        display: block;
-        font-size: 8px;
-        color: #fca311;
-        font-weight: 900;
-    }
-
-    .p-amount {
-        font-size: 1.2rem;
-        font-weight: 900;
-        color: #00ff85;
-    }
-
-    @keyframes pulse-glow {
-        0% { opacity: 0.5; }
-        50% { opacity: 1; }
-        100% { opacity: 0.5; }
-    }
-
-    /* لإخفاء الهيدر الأصلي في حال تداخل مع الشريط */
-    body { padding-top: 65px !important; }
+    body { padding-top: 105px !important; }
 </style>
