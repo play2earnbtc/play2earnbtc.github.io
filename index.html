@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Play2Earn VIP - Full Source Code</title>
+    <title>Play2Earn VIP - Full Independent Source</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -46,7 +46,7 @@
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
 
         .game-card { background: var(--card-bg); border: 2px solid #1f242b; border-radius: 12px; padding: 20px; text-align: center; }
-        .img-box { width: 100%; height: 140px; background: #000; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
+        .img-box { width: 100%; height: 140px; background: #000; border-radius: 8px; margin-bottom: 15px; overflow: hidden; border: 1px solid #222; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         .game-title { font-size: 14px; font-weight: bold; color: #fff; margin-bottom: 10px; display: block; }
         .reward { color: var(--mario-yellow); font-weight: 900; font-size: 22px; display: block; margin-bottom: 15px; }
@@ -67,11 +67,13 @@
         .partners-title { color: var(--mario-blue); font-size: 14px; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; }
         .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
         .partner-box { 
-            display: block; background: #111; border: 1px solid #222; padding: 20px; 
+            display: flex; align-items: center; justify-content: center;
+            background: #111; border: 1px solid #222; padding: 15px; 
             border-radius: 6px; color: #444; font-size: 11px; font-weight: 900; 
             text-decoration: none; transition: 0.3s;
         }
-        .partner-box:hover { border-color: var(--mario-blue); color: white; }
+        .partner-box img { width: 20px; height: 20px; margin-right: 10px; border-radius: 3px; }
+        .partner-box:hover { border-color: var(--mario-blue); color: white; background: #161a1d; }
 
         @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } .ad-banner { grid-column: span 2; } .partners-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
@@ -94,199 +96,176 @@
     <div class="container">
         <div class="grid">
             
-            <!-- المربعات من 1 إلى 8 -->
+            <!-- GROUP 1: Boxes 1-8 -->
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_1" alt=""></div>
-                <span class="game-title">Game Name 1</span>
+                <div class="img-box"><img src="IMG_1" alt=""></div>
+                <span class="game-title">Game 1</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_1" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_1" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_2" alt=""></div>
+                <span class="game-title">Game 2</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_2" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_3" alt=""></div>
+                <span class="game-title">Game 3</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_3" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_4" alt=""></div>
+                <span class="game-title">Game 4</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_4" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_5" alt=""></div>
+                <span class="game-title">Game 5</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_5" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_6" alt=""></div>
+                <span class="game-title">Game 6</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_6" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_7" alt=""></div>
+                <span class="game-title">Game 7</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_7" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_8" alt=""></div>
+                <span class="game-title">Game 8</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_8" class="play-button">JOUER ET GAGNE</a>
             </div>
 
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_2" alt=""></div>
-                <span class="game-title">Game Name 2</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_2" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_3" alt=""></div>
-                <span class="game-title">Game Name 3</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_3" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_4" alt=""></div>
-                <span class="game-title">Game Name 4</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_4" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_5" alt=""></div>
-                <span class="game-title">Game Name 5</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_5" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_6" alt=""></div>
-                <span class="game-title">Game Name 6</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_6" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_7" alt=""></div>
-                <span class="game-title">Game Name 7</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_7" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_8" alt=""></div>
-                <span class="game-title">Game Name 8</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_8" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <!-- إعلان أول -->
             <div class="ad-banner">ADVERTISEMENT BANNER 1</div>
 
-            <!-- المربعات من 9 إلى 16 -->
+            <!-- GROUP 2: Boxes 9-16 -->
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_9" alt=""></div>
-                <span class="game-title">Game Name 9</span>
+                <div class="img-box"><img src="IMG_9" alt=""></div>
+                <span class="game-title">Game 9</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_9" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_9" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_10" alt=""></div>
+                <span class="game-title">Game 10</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_10" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_11" alt=""></div>
+                <span class="game-title">Game 11</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_11" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_12" alt=""></div>
+                <span class="game-title">Game 12</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_12" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_13" alt=""></div>
+                <span class="game-title">Game 13</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_13" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_14" alt=""></div>
+                <span class="game-title">Game 14</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_14" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_15" alt=""></div>
+                <span class="game-title">Game 15</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_15" class="play-button">JOUER ET GAGNE</a>
+            </div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMG_16" alt=""></div>
+                <span class="game-title">Game 16</span>
+                <span class="reward">10.00$</span>
+                <a href="URL_16" class="play-button">JOUER ET GAGNE</a>
             </div>
 
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_10" alt=""></div>
-                <span class="game-title">Game Name 10</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_10" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_11" alt=""></div>
-                <span class="game-title">Game Name 11</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_11" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_12" alt=""></div>
-                <span class="game-title">Game Name 12</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_12" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_13" alt=""></div>
-                <span class="game-title">Game Name 13</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_13" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_14" alt=""></div>
-                <span class="game-title">Game Name 14</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_14" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_15" alt=""></div>
-                <span class="game-title">Game Name 15</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_15" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_16" alt=""></div>
-                <span class="game-title">Game Name 16</span>
-                <span class="reward">10.00$</span>
-                <a href="LINK_16" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
-            <!-- إعلان ثاني -->
             <div class="ad-banner">ADVERTISEMENT BANNER 2</div>
 
-            <!-- المربعات من 17 إلى 24 -->
+            <!-- GROUP 3: Boxes 17-24 -->
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_17" alt=""></div>
-                <span class="game-title">Game Name 17</span>
+                <div class="img-box"><img src="IMG_17" alt=""></div>
+                <span class="game-title">Game 17</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_17" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_17" class="play-button">JOUER ET GAGNE</a>
             </div>
-
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_18" alt=""></div>
-                <span class="game-title">Game Name 18</span>
+                <div class="img-box"><img src="IMG_18" alt=""></div>
+                <span class="game-title">Game 18</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_18" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_18" class="play-button">JOUER ET GAGNE</a>
             </div>
-
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_19" alt=""></div>
-                <span class="game-title">Game Name 19</span>
+                <div class="img-box"><img src="IMG_19" alt=""></div>
+                <span class="game-title">Game 19</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_19" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_19" class="play-button">JOUER ET GAGNE</a>
             </div>
-
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_20" alt=""></div>
-                <span class="game-title">Game Name 20</span>
+                <div class="img-box"><img src="IMG_20" alt=""></div>
+                <span class="game-title">Game 20</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_20" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_20" class="play-button">JOUER ET GAGNE</a>
             </div>
-
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_21" alt=""></div>
-                <span class="game-title">Game Name 21</span>
+                <div class="img-box"><img src="IMG_21" alt=""></div>
+                <span class="game-title">Game 21</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_21" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_21" class="play-button">JOUER ET GAGNE</a>
             </div>
-
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_22" alt=""></div>
-                <span class="game-title">Game Name 22</span>
+                <div class="img-box"><img src="IMG_22" alt=""></div>
+                <span class="game-title">Game 22</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_22" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_22" class="play-button">JOUER ET GAGNE</a>
             </div>
-
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_23" alt=""></div>
-                <span class="game-title">Game Name 23</span>
+                <div class="img-box"><img src="IMG_23" alt=""></div>
+                <span class="game-title">Game 23</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_23" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_23" class="play-button">JOUER ET GAGNE</a>
             </div>
-
             <div class="game-card">
-                <div class="img-box"><img src="IMAGE_URL_24" alt=""></div>
-                <span class="game-title">Game Name 24</span>
+                <div class="img-box"><img src="IMG_24" alt=""></div>
+                <span class="game-title">Game 24</span>
                 <span class="reward">10.00$</span>
-                <a href="LINK_24" class="play-button">JOUER ET GAGNE</a>
+                <a href="URL_24" class="play-button">JOUER ET GAGNE</a>
             </div>
 
         </div>
 
-        <!-- قسم الشركات -->
+        <!-- 10 Partners - Full Code -->
         <div class="partners-section">
             <div class="partners-title">OFFERWALL PARTNERS</div>
             <div class="partners-grid">
-                <a href="PARTNER_1" class="partner-box">ADGEM</a>
-                <a href="PARTNER_2" class="partner-box">AYETSTUDIOS</a>
-                <a href="PARTNER_3" class="partner-box">LOOTABLY</a>
-                <a href="PARTNER_4" class="partner-box">OFFERTORO</a>
-                <a href="PARTNER_5" class="partner-box">CPX RESEARCH</a>
-                <a href="PARTNER_6" class="partner-box">BITLABS</a>
-                <a href="PARTNER_7" class="partner-box">ADGATE</a>
-                <a href="PARTNER_8" class="partner-box">REVENUE UNIVERSE</a>
-                <a href="PARTNER_9" class="partner-box">MM WALL</a>
-                <a href="PARTNER_10" class="partner-box">TIMEVALL</a>
+                <a href="P_URL_1" class="partner-box"><img src="P_IMG_1" alt=""> ADGEM</a>
+                <a href="P_URL_2" class="partner-box"><img src="P_IMG_2" alt=""> AYETSTUDIOS</a>
+                <a href="P_URL_3" class="partner-box"><img src="P_IMG_3" alt=""> LOOTABLY</a>
+                <a href="P_URL_4" class="partner-box"><img src="P_IMG_4" alt=""> OFFERTORO</a>
+                <a href="P_URL_5" class="partner-box"><img src="P_IMG_5" alt=""> CPX RESEARCH</a>
+                <a href="P_URL_6" class="partner-box"><img src="P_IMG_6" alt=""> BITLABS</a>
+                <a href="P_URL_7" class="partner-box"><img src="P_IMG_7" alt=""> ADGATE</a>
+                <a href="P_URL_8" class="partner-box"><img src="P_IMG_8" alt=""> REVENUE UNIVERSE</a>
+                <a href="P_URL_9" class="partner-box"><img src="P_IMG_9" alt=""> MM WALL</a>
+                <a href="P_URL_10" class="partner-box"><img src="P_IMG_10" alt=""> TIMEVALL</a>
             </div>
         </div>
     </div>
