@@ -11,57 +11,68 @@
             --mario-yellow: #FBD000;
             --mario-green: #43B047;
             --bg-dark: #0a0c0f;
+            --header-bg: #000;
             --card-bg: #161b22;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg-dark); font-family: 'Segoe UI', sans-serif; color: white; }
+        body { background: var(--bg-dark); font-family: sans-serif; color: white; line-height: 1.6; }
 
+        /* HEADER SECTION */
         header { 
-            background: #000; padding: 15px 40px; border-bottom: 4px solid var(--mario-red);
+            background: var(--header-bg); padding: 10px 40px; border-bottom: 3px solid var(--mario-red);
             display: flex; align-items: center; justify-content: space-between;
-            position: fixed; top: 0; width: 100%; z-index: 1000;
+            position: fixed; top: 0; width: 100%; z-index: 9999;
         }
-        .logo { font-size: 22px; font-weight: 900; color: white; }
+        .logo { font-size: 20px; font-weight: 900; }
         .logo span:nth-child(1) { color: var(--mario-red); }
         .logo span:nth-child(2) { color: var(--mario-blue); }
         .logo span:nth-child(3) { color: var(--mario-yellow); }
         .logo span:nth-child(4) { color: var(--mario-green); }
+        .logo span:nth-child(5) { color: var(--mario-green); margin-left: 5px; }
 
-        .secure-tag { border: 1px solid var(--mario-green); color: var(--mario-green); padding: 5px 12px; border-radius: 15px; font-size: 10px; font-weight: bold; }
+        .secure-btn { border: 1px solid var(--mario-green); color: var(--mario-green); padding: 4px 12px; border-radius: 20px; font-size: 9px; font-weight: bold; }
         .total-paid { color: var(--mario-yellow); font-weight: bold; font-size: 16px; }
 
-        .ticker-wrap { width: 100%; background: #111; margin-top: 75px; overflow: hidden; padding: 8px 0; border-bottom: 1px solid #222; }
-        .ticker { display: inline-block; white-space: nowrap; color: var(--mario-yellow); font-weight: bold; animation: scroll 30s linear infinite; }
+        /* TICKER */
+        .ticker-wrap { width: 100%; background: #000; margin-top: 50px; overflow: hidden; border-bottom: 1px solid #1c2128; padding: 10px 0; }
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 20s linear infinite; color: var(--mario-yellow); font-size: 13px; font-weight: bold; }
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        .container { max-width: 1300px; margin: 30px auto; padding: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        /* GAME GRID */
+        .container { max-width: 1400px; margin: 40px auto; padding: 20px; text-align: center; }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+
+        .game-card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 20px; width: 300px; }
+        .img-box { width: 100%; height: 160px; background: #000; border: 1px solid #222; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
         
-        .game-card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 20px; text-align: center; }
-        .img-placeholder { width: 100%; height: 150px; background: #000; border-radius: 8px; margin-bottom: 15px; border: 1px solid #333; }
+        .price { color: var(--mario-yellow); font-weight: bold; font-size: 18px; display: block; margin-bottom: 5px; }
+        .name { color: #ccc; font-size: 10px; display: block; margin-bottom: 20px; }
         
-        .price-label { color: var(--mario-yellow); font-weight: bold; font-size: 18px; display: block; margin-bottom: 5px; }
-        .game-label { color: #ccc; font-size: 11px; margin-bottom: 15px; display: block; }
-        
-        .play-btn { 
+        .btn-locker { 
             background: var(--mario-red); color: white; text-decoration: none; 
-            display: block; padding: 10px; border-radius: 8px; font-weight: bold; 
+            display: block; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 16px;
             box-shadow: 0 4px 0 #a11411;
         }
 
-        .ads-container { grid-column: span 4; border: 1px dashed #444; height: 100px; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: #555; }
+        /* ADS BOX */
+        .ads-box { 
+            width: 100%; max-width: 1100px; margin: 40px auto; border: 1px dashed #30363d; 
+            height: 120px; display: flex; align-items: center; justify-content: center; color: #444; font-size: 12px;
+        }
 
-        .p-header { color: var(--mario-blue); text-align: center; margin: 40px 0 20px; font-weight: 900; }
-        .p-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-        .p-box { background: var(--card-bg); border: 1px solid #30363d; padding: 15px; border-radius: 8px; text-align: center; text-decoration: none; font-weight: bold; }
+        /* PARTNERS */
+        .p-header { color: var(--mario-blue); font-weight: 900; margin-bottom: 30px; text-transform: uppercase; font-size: 24px; }
+        .p-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 1100px; margin: 0 auto; }
+        .p-box { background: var(--card-bg); border: 1px solid #30363d; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"><span>P</span><span>L</span><span>A</span><span>Y</span>2EARN VIP</div>
-        <div class="secure-tag">SECURE CONNECTION</div>
+        <div class="logo"><span>P</span><span>L</span><span>A</span><span>Y</span><span>2EARN VIP</span></div>
+        <div class="secure-btn">SECURE CONNECTION</div>
         <div class="total-paid">Total Paid: $3,510,240</div>
     </header>
 
@@ -71,18 +82,24 @@
 
     <div class="container">
         <div class="grid">
-            <!-- Game Blocks (1 to 24) -->
-            <!-- لعمل 24 خانة، كرر هذا الجزء -->
+            <!-- Game Card 1 -->
             <div class="game-card">
-                <div class="img-placeholder"><img src="رابط_الصورة" style="width:100%; height:100%; border-radius:8px;"></div>
-                <span class="price-label">ضع_السعر_هنا</span>
-                <span class="game-label">اسم_اللعبة</span>
-                <a href="ضع_رابط_قفل_البيانات_هنا" class="play-btn">Jouer et gagne</a>
+                <div class="img-box"><img src="رابط_الصورة_هنا"></div>
+                <span class="price">ضع_السعر_1_هنا</span>
+                <span class="name">ضع_اسم_اللعبة_1_هنا</span>
+                <a href="ضع_رابط_قفل_المحتوى_هنا" class="btn-locker">Jouer et gagne</a>
             </div>
-            <!-- ... كرر للعدد المطلوب ... -->
 
-            <div class="ads-container">ضع_كود_الإعلان_الأول_هنا</div>
+            <!-- Game Card 2 -->
+            <div class="game-card">
+                <div class="img-box"><img src="رابط_الصورة_هنا"></div>
+                <span class="price">ضع_السعر_2_هنا</span>
+                <span class="name">ضع_اسم_اللعبة_2_هنا</span>
+                <a href="ضع_رابط_قفل_المحتوى_هنا" class="btn-locker">Jouer et gagne</a>
+            </div>
         </div>
+
+        <div class="ads-box">ضع كود الإعلان الأول هنا</div>
 
         <h2 class="p-header">OFFERWALL PARTNERS</h2>
         <div class="p-grid">
@@ -91,7 +108,7 @@
             <a href="#" class="p-box" style="color:var(--mario-yellow)">Torox</a>
             <a href="#" class="p-box" style="color:var(--mario-green)">MM Wall</a>
             <a href="#" class="p-box" style="color:white">RevU</a>
-            <!-- الصف الثاني -->
+            <!-- Row 2 -->
             <a href="#" class="p-box" style="color:var(--mario-red)">TimeWall</a>
             <a href="#" class="p-box" style="color:var(--mario-blue)">BitLabs</a>
             <a href="#" class="p-box" style="color:var(--mario-yellow)">MyChips</a>
