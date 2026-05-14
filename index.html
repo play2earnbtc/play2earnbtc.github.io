@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Play2Earn VIP - Updated</title>
+    <title>Play2Earn VIP - Final Functional Build</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -23,7 +23,6 @@
             position: fixed; top: 0; width: 100%; z-index: 10000;
         }
         
-        /* تلوين PLAY 2EARN بالكامل */
         .logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
         .logo .c1 { color: var(--mario-red); }
         .logo .c2 { color: var(--mario-blue); }
@@ -36,8 +35,6 @@
         .logo .c9 { color: var(--mario-red); }
         .logo .vip-text { color: white; margin-left: 4px; }
 
-        .secure-status { color: var(--mario-green); font-size: 11px; font-weight: bold; border: 1px solid #1a2e21; padding: 5px 15px; border-radius: 4px; background: rgba(46, 204, 113, 0.05); }
-
         .ticker-wrap { width: 100%; background: #111; margin-top: 65px; overflow: hidden; border-bottom: 1px solid #222; padding: 12px 0; }
         .ticker { display: inline-block; white-space: nowrap; animation: scroll 35s linear infinite; color: #999; font-size: 12px; }
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
@@ -48,19 +45,23 @@
         .game-card { background: var(--card-bg); border: 1px solid #1f242b; border-radius: 8px; padding: 25px; text-align: center; }
         .reward { color: var(--mario-yellow); font-weight: bold; font-size: 20px; display: block; }
         
-        /* الزر الأخضر */
         .play-button { 
             background: var(--mario-green); color: #000; text-decoration: none; 
             display: block; padding: 14px; border-radius: 4px; font-weight: 800; font-size: 14px;
             text-transform: uppercase; margin-top: 15px;
         }
 
-        /* قسم الشركات (10 خانات) */
-        .partners-section { margin-top: 60px; text-align: center; }
+        /* إصلاح قسم الشركات ليعمل كروابط */
+        .partners-section { margin-top: 60px; text-align: center; padding-bottom: 50px; }
         .partners-title { color: var(--mario-blue); font-size: 14px; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; }
         .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
-        .partner-box { background: #111; border: 1px solid #222; padding: 15px; border-radius: 4px; color: #555; font-size: 11px; font-weight: bold; transition: 0.3s; cursor: pointer; }
-        .partner-box:hover { border-color: var(--mario-blue); color: white; }
+        
+        .partner-link { 
+            display: block; background: #111; border: 1px solid #222; padding: 15px; 
+            border-radius: 4px; color: #555; font-size: 11px; font-weight: bold; 
+            text-decoration: none; transition: 0.3s;
+        }
+        .partner-link:hover { border-color: var(--mario-blue); color: white; background: #1a1a1a; }
 
         @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } .partners-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
@@ -73,37 +74,39 @@
             <span class="c5">2</span><span class="c6">E</span><span class="c7">A</span><span class="c8">R</span><span class="c9">N</span>
             <span class="vip-text">VIP</span>
         </div>
-        <div class="secure-status">SYSTEM SECURED ● SSL</div>
+        <div style="color: var(--mario-green); font-size: 11px; font-weight: bold;">SECURED SYSTEM</div>
     </header>
 
     <div class="ticker-wrap">
-        <div class="ticker"><b>STABILITY:</b> Status: <span style="color:var(--mario-green)">Online</span> ● <b>PAYOUTS:</b> Daily volume exceeded $10,000.</div>
+        <div class="ticker"><b>STABILITY:</b> Status: <span style="color:var(--mario-green)">Online</span> ● <b>OFFERWALLS:</b> All partners are currently active.</div>
     </div>
 
     <div class="container">
-        <!-- المربعات (24 مربع) -->
+        <!-- قسم المربعات -->
         <div class="grid">
-            <div class="game-card"> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <span class="reward">15.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <span class="reward">20.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <span class="reward">25.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <!-- كرر المربعات لـ 24 خانة -->
+            <!-- مثال لمربع واحد (كرر هذا الكود 24 مرة) -->
+            <div class="game-card"> 
+                <div style="width:100%; height:120px; background:#000; margin-bottom:15px; border-radius:4px;"></div>
+                <span class="reward">10.00$</span> 
+                <a href="رابط_العرض_هنا" class="play-button">Jouer et gagne</a> 
+            </div>
+            <!-- ... المربعات الأخرى ... -->
         </div>
 
-        <!-- قسم الشركات (10 خانات) -->
+        <!-- قسم الشركات الـ 10 (تعمل الآن كروابط) -->
         <div class="partners-section">
-            <div class="partners-title">Offerwall Partners</div>
+            <div class="partners-title">OFFERWALL PARTNERS</div>
             <div class="partners-grid">
-                <div class="partner-box">ADGEM</div>
-                <div class="partner-box">AYETSTUDIOS</div>
-                <div class="partner-box">LOOTABLY</div>
-                <div class="partner-box">OFFERTORO</div>
-                <div class="partner-box">CPX RESEARCH</div>
-                <div class="partner-box">BITLABS</div>
-                <div class="partner-box">ADGATE</div>
-                <div class="partner-box">REVENUE UNIVERSE</div>
-                <div class="partner-box">MM WALL</div>
-                <div class="partner-box">TIMEVALL</div>
+                <a href="رابط_الشركة_1" class="partner-link">ADGEM</a>
+                <a href="رابط_الشركة_2" class="partner-link">AYETSTUDIOS</a>
+                <a href="رابط_الشركة_3" class="partner-link">LOOTABLY</a>
+                <a href="رابط_الشركة_4" class="partner-link">OFFERTORO</a>
+                <a href="رابط_الشركة_5" class="partner-link">CPX RESEARCH</a>
+                <a href="رابط_الشركة_6" class="partner-link">BITLABS</a>
+                <a href="رابط_الشركة_7" class="partner-link">ADGATE</a>
+                <a href="رابط_الشركة_8" class="partner-link">REVENUE UNIVERSE</a>
+                <a href="رابط_الشركة_9" class="partner-link">MM WALL</a>
+                <a href="رابط_الشركة_10" class="partner-link">TIMEVALL</a>
             </div>
         </div>
     </div>
