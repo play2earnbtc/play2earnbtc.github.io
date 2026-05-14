@@ -1,70 +1,122 @@
-<div class="grid">
-    <!-- خانة 1 -->
-    <div class="game-card">
-        <img src="رابط_صورة_الخانة_1">
-        <span class="reward-tag">قيمة_الربح_1</span>
-        <h3>اسم_العرض_1</h3>
-        <a href="رابط_الإحالة_1" class="play-btn">Jouer et gagne</a>
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <title>Play2Earn VIP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            --mario-red: #E52521;
+            --mario-blue: #049CD8;
+            --mario-yellow: #FBD000;
+            --mario-green: #43B047;
+            --bg-dark: #0a0c0f;
+            --card-bg: #161b22;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg-dark); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: white; }
+
+        /* HEADER */
+        header { 
+            background: #000; padding: 15px 40px; border-bottom: 5px solid var(--mario-red);
+            display: flex; align-items: center; justify-content: space-between;
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+        }
+        .logo { font-size: 22px; font-weight: 900; }
+        .logo span:nth-child(1) { color: var(--mario-red); }
+        .logo span:nth-child(2) { color: var(--mario-blue); }
+        .logo span:nth-child(3) { color: var(--mario-yellow); }
+        .logo span:nth-child(4) { color: var(--mario-green); }
+        .logo span:nth-child(5) { color: var(--mario-green); margin-left: 5px; }
+
+        .ssl-tag { border: 2px solid var(--mario-green); color: var(--mario-green); padding: 5px 15px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+        .total-paid { color: var(--mario-yellow); font-weight: bold; font-size: 18px; text-align: right; }
+
+        /* TICKER (الشريط المتحرك) */
+        .ticker-wrap { width: 100%; background: #111; overflow: hidden; border-bottom: 1px solid #222; margin-top: 80px; }
+        .ticker { display: inline-block; white-space: nowrap; padding: 12px 0; font-weight: bold; color: var(--mario-yellow); animation: scroll 25s linear infinite; }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+        /* GRID */
+        .container { max-width: 1300px; margin: 30px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+        .game-card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 25px 15px; text-align: center; }
+        .img-box { width: 100%; height: 160px; background: #000; border-radius: 8px; margin-bottom: 15px; overflow: hidden; border: 1px solid #333; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .profit { color: var(--mario-yellow); font-weight: bold; margin-bottom: 5px; display: block; font-size: 18px; }
+        .game-name { font-size: 12px; margin-bottom: 20px; color: #ccc; text-transform: uppercase; }
+        
+        .play-btn { 
+            background: var(--mario-red); color: white; text-decoration: none; 
+            display: block; padding: 12px; border-radius: 8px; font-weight: 800; font-size: 15px;
+            border-bottom: 4px solid #a11411;
+        }
+
+        .ads-space { 
+            grid-column: span 4; background: #000; border: 1px dashed #444; 
+            height: 100px; margin: 20px 0; display: flex; align-items: center; justify-content: center; color: #666;
+        }
+
+        /* PARTNERS */
+        .p-title { color: var(--mario-blue); text-align: center; margin: 60px 0 30px; font-weight: 900; font-size: 26px; }
+        .p-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 50px; }
+        .p-box { background: var(--card-bg); border: 1px solid #30363d; padding: 20px; text-align: center; text-decoration: none; border-radius: 10px; font-weight: bold; }
+
+        @media (max-width: 1000px) { .grid, .p-grid { grid-template-columns: repeat(2, 1fr); } .ads-space { grid-column: span 2; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><span>PLAY</span><span>2</span><span>EARN</span><span> VIP</span></div>
+        <div class="ssl-tag">SECURE CONNECTION</div>
+        <div class="total-paid">Total Paid: $3,510,240</div>
+    </header>
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            NEW PAYMENT: User_992 just received $12.50! ● TOP GAME: Mario Run is paying double points today! ● Join our community for exclusive promo codes!
+        </div>
     </div>
 
-    <!-- خانة 2 -->
-    <div class="game-card">
-        <img src="رابط_صورة_الخانة_2">
-        <span class="reward-tag">قيمة_الربح_2</span>
-        <h3>اسم_العرض_2</h3>
-        <a href="رابط_الإحالة_2" class="play-btn">Jouer et gagne</a>
+    <div class="container">
+        <div class="grid">
+            
+            <div class="game-card">
+                <div class="img-box"><img src="ضع_رابط_صورة_اللعبة_1_هنا"></div>
+                <span class="profit">ضع_السعر_1_هنا</span>
+                <div class="game-name">ضع_اسم_اللعبة_1_هنا</div>
+                <a href="ضع_رابط_قفل_المحتوى_1_هنا" class="play-btn">Jouer et gagne</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="ضع_رابط_صورة_اللعبة_2_هنا"></div>
+                <span class="profit">ضع_السعر_2_هنا</span>
+                <div class="game-name">ضع_اسم_اللعبة_2_هنا</div>
+                <a href="ضع_رابط_قفل_المحتوى_2_هنا" class="play-btn">Jouer et gagne</a>
+            </div>
+
+            <div class="ads-space">ضع_كود_الإعلان_الأول_هنا</div>
+            
+            </div>
+
+        <h2 class="p-title">OFFERWALL PARTNERS</h2>
+        <div class="p-grid">
+            <a href="رابط_شركة_AdGate" class="p-box" style="color:var(--mario-red)">AdGate</a>
+            <a href="رابط_شركة_Ayet" class="p-box" style="color:var(--mario-blue)">AyetStudios</a>
+            <a href="رابط_شركة_Torox" class="p-box" style="color:var(--mario-yellow)">Torox</a>
+            <a href="رابط_شركة_MM" class="p-box" style="color:var(--mario-green)">MM Wall</a>
+            <a href="رابط_شركة_RevU" class="p-box" style="color:white">RevU</a>
+            <a href="رابط_شركة_6" class="p-box" style="color:var(--mario-red)">TimeWall</a>
+            <a href="رابط_شركة_7" class="p-box" style="color:var(--mario-blue)">BitLabs</a>
+            <a href="رابط_شركة_8" class="p-box" style="color:var(--mario-yellow)">MyChips</a>
+            <a href="رابط_شركة_9" class="p-box" style="color:var(--mario-green)">Lootably</a>
+            <a href="رابط_شركة_10" class="p-box" style="color:white">Adjoe</a>
+        </div>
     </div>
 
-    <!-- خانة 3 -->
-    <div class="game-card">
-        <img src="رابط_صورة_الخانة_3">
-        <span class="reward-tag">قيمة_الربح_3</span>
-        <h3>اسم_العرض_3</h3>
-        <a href="رابط_الإحالة_3" class="play-btn">Jouer et gagne</a>
-    </div>
-
-    <!-- خانة 4 -->
-    <div class="game-card">
-        <img src="رابط_صورة_الخانة_4">
-        <span class="reward-tag">قيمة_الربح_4</span>
-        <h3>اسم_العرض_4</h3>
-        <a href="رابط_الإحالة_4" class="play-btn">Jouer et gagne</a>
-    </div>
-
-    <!-- مساحة إعلانية بين الخانات -->
-    <div class="ads-banner">
-        الصق_كود_الإعلان_هنا
-    </div>
-
-    <!-- خانة 5 -->
-    <div class="game-card">
-        <img src="رابط_صورة_الخانة_5">
-        <span class="reward-tag">قيمة_الربح_5</span>
-        <h3>اسم_العرض_5</h3>
-        <a href="رابط_الإحالة_5" class="play-btn">Jouer et gagne</a>
-    </div>
-
-    <!-- خانة 6 -->
-    <div class="game-card">
-        <img src="رابط_صورة_الخانة_6">
-        <span class="reward-tag">قيمة_الربح_6</span>
-        <h3>اسم_العرض_6</h3>
-        <a href="رابط_الإحالة_6" class="play-btn">Jouer et gagne</a>
-    </div>
-
-    <!-- خانة 7 -->
-    <div class="game-card">
-        <img src="رابط_صورة_الخانة_7">
-        <span class="reward-tag">قيمة_الربح_7</span>
-        <h3>اسم_العرض_7</h3>
-        <a href="رابط_الإحالة_7" class="play-btn">Jouer et gagne</a>
-    </div>
-
-    <!-- خانة 8 -->
-    <div class="game-card">
-        <img src="رابط_صورة_الخانة_8">
-        <span class="reward-tag">قيمة_الربح_8</span>
-        <h3>اسم_العرض_8</h3>
-        <a href="رابط_الإحالة_8" class="play-btn">Jouer et gagne</a>
-    </div>
-</div>
+</body>
+</html>
