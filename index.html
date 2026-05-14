@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Play2Earn VIP - Ultimate Build</title>
+    <title>Play2Earn VIP - Full Source Code</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -43,34 +43,24 @@
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
         .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
-        
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
 
-        .game-card { background: var(--card-bg); border: 2px solid #1f242b; border-radius: 12px; padding: 25px; text-align: center; }
-        .img-box { width: 100%; height: 140px; background: #000; border-radius: 8px; margin-bottom: 20px; }
-        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 22px; display: block; margin-bottom: 20px; }
+        .game-card { background: var(--card-bg); border: 2px solid #1f242b; border-radius: 12px; padding: 20px; text-align: center; }
+        .img-box { width: 100%; height: 140px; background: #000; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .game-title { font-size: 14px; font-weight: bold; color: #fff; margin-bottom: 10px; display: block; }
+        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 22px; display: block; margin-bottom: 15px; }
         
         .play-button { 
             background: var(--mario-green); color: #000; text-decoration: none; 
-            display: block; padding: 15px; border-radius: 6px; font-weight: 900; font-size: 14px;
+            display: block; padding: 12px; border-radius: 6px; font-weight: 900; font-size: 13px;
             text-transform: uppercase; transition: 0.2s;
         }
 
-        /* مستطيلات الإعلانات */
         .ad-banner { 
-            grid-column: span 4; 
-            background: var(--ad-bg); 
-            border: 1px dashed #333; 
-            height: 120px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            border-radius: 8px;
-            color: #444;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 10px 0;
+            grid-column: span 4; background: var(--ad-bg); border: 1px dashed #333; 
+            height: 100px; display: flex; align-items: center; justify-content: center; 
+            border-radius: 8px; color: #444; font-weight: bold; margin: 10px 0;
         }
 
         .partners-section { margin-top: 80px; text-align: center; padding-bottom: 50px; }
@@ -83,11 +73,7 @@
         }
         .partner-box:hover { border-color: var(--mario-blue); color: white; }
 
-        @media (max-width: 1100px) { 
-            .grid { grid-template-columns: repeat(2, 1fr); } 
-            .ad-banner { grid-column: span 2; }
-            .partners-grid { grid-template-columns: repeat(2, 1fr); } 
-        }
+        @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } .ad-banner { grid-column: span 2; } .partners-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -102,57 +88,207 @@
     </header>
 
     <div class="ticker-wrap">
-        <div class="ticker">
-            <b>STABILITY:</b> Status: <span style="color:var(--mario-green)">Online</span> ● <b>OFFERWALLS:</b> All partners are currently active.
-        </div>
+        <div class="ticker"><b>STABILITY:</b> Status: <span style="color:var(--mario-green)">Online</span> ● <b>OFFERWALLS:</b> All partners are currently active.</div>
     </div>
 
     <div class="container">
         <div class="grid">
-            <!-- أول 8 مربعات -->
-            <script>
-                for (let i = 1; i <= 8; i++) {
-                    document.write('<div class="game-card"><div class="img-box"></div><span class="reward">10.00$</span><a href="#" class="play-button">JOUER ET GAGNE</a></div>');
-                }
-            </script>
+            
+            <!-- المربعات من 1 إلى 8 -->
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_1" alt=""></div>
+                <span class="game-title">Game Name 1</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_1" class="play-button">JOUER ET GAGNE</a>
+            </div>
 
-            <!-- مستطيل إعلاني أول -->
-            <div class="ad-banner">Advertisement Space - Banner 1</div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_2" alt=""></div>
+                <span class="game-title">Game Name 2</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_2" class="play-button">JOUER ET GAGNE</a>
+            </div>
 
-            <!-- ثاني 8 مربعات -->
-            <script>
-                for (let i = 1; i <= 8; i++) {
-                    document.write('<div class="game-card"><div class="img-box"></div><span class="reward">10.00$</span><a href="#" class="play-button">JOUER ET GAGNE</a></div>');
-                }
-            </script>
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_3" alt=""></div>
+                <span class="game-title">Game Name 3</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_3" class="play-button">JOUER ET GAGNE</a>
+            </div>
 
-            <!-- مستطيل إعلاني ثاني -->
-            <div class="ad-banner">Advertisement Space - Banner 2</div>
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_4" alt=""></div>
+                <span class="game-title">Game Name 4</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_4" class="play-button">JOUER ET GAGNE</a>
+            </div>
 
-            <!-- آخر 8 مربعات -->
-            <script>
-                for (let i = 1; i <= 8; i++) {
-                    document.write('<div class="game-card"><div class="img-box"></div><span class="reward">10.00$</span><a href="#" class="play-button">JOUER ET GAGNE</a></div>');
-                }
-            </script>
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_5" alt=""></div>
+                <span class="game-title">Game Name 5</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_5" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_6" alt=""></div>
+                <span class="game-title">Game Name 6</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_6" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_7" alt=""></div>
+                <span class="game-title">Game Name 7</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_7" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_8" alt=""></div>
+                <span class="game-title">Game Name 8</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_8" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <!-- إعلان أول -->
+            <div class="ad-banner">ADVERTISEMENT BANNER 1</div>
+
+            <!-- المربعات من 9 إلى 16 -->
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_9" alt=""></div>
+                <span class="game-title">Game Name 9</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_9" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_10" alt=""></div>
+                <span class="game-title">Game Name 10</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_10" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_11" alt=""></div>
+                <span class="game-title">Game Name 11</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_11" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_12" alt=""></div>
+                <span class="game-title">Game Name 12</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_12" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_13" alt=""></div>
+                <span class="game-title">Game Name 13</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_13" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_14" alt=""></div>
+                <span class="game-title">Game Name 14</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_14" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_15" alt=""></div>
+                <span class="game-title">Game Name 15</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_15" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_16" alt=""></div>
+                <span class="game-title">Game Name 16</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_16" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <!-- إعلان ثاني -->
+            <div class="ad-banner">ADVERTISEMENT BANNER 2</div>
+
+            <!-- المربعات من 17 إلى 24 -->
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_17" alt=""></div>
+                <span class="game-title">Game Name 17</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_17" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_18" alt=""></div>
+                <span class="game-title">Game Name 18</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_18" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_19" alt=""></div>
+                <span class="game-title">Game Name 19</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_19" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_20" alt=""></div>
+                <span class="game-title">Game Name 20</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_20" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_21" alt=""></div>
+                <span class="game-title">Game Name 21</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_21" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_22" alt=""></div>
+                <span class="game-title">Game Name 22</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_22" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_23" alt=""></div>
+                <span class="game-title">Game Name 23</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_23" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
+            <div class="game-card">
+                <div class="img-box"><img src="IMAGE_URL_24" alt=""></div>
+                <span class="game-title">Game Name 24</span>
+                <span class="reward">10.00$</span>
+                <a href="LINK_24" class="play-button">JOUER ET GAGNE</a>
+            </div>
+
         </div>
 
+        <!-- قسم الشركات -->
         <div class="partners-section">
             <div class="partners-title">OFFERWALL PARTNERS</div>
             <div class="partners-grid">
-                <a href="#" class="partner-box">ADGEM</a>
-                <a href="#" class="partner-box">AYETSTUDIOS</a>
-                <a href="#" class="partner-box">LOOTABLY</a>
-                <a href="#" class="partner-box">OFFERTORO</a>
-                <a href="#" class="partner-box">CPX RESEARCH</a>
-                <a href="#" class="partner-box">BITLABS</a>
-                <a href="#" class="partner-box">ADGATE</a>
-                <a href="#" class="partner-box">REVENUE UNIVERSE</a>
-                <a href="#" class="partner-box">MM WALL</a>
-                <a href="#" class="partner-box">TIMEVALL</a>
+                <a href="PARTNER_1" class="partner-box">ADGEM</a>
+                <a href="PARTNER_2" class="partner-box">AYETSTUDIOS</a>
+                <a href="PARTNER_3" class="partner-box">LOOTABLY</a>
+                <a href="PARTNER_4" class="partner-box">OFFERTORO</a>
+                <a href="PARTNER_5" class="partner-box">CPX RESEARCH</a>
+                <a href="PARTNER_6" class="partner-box">BITLABS</a>
+                <a href="PARTNER_7" class="partner-box">ADGATE</a>
+                <a href="PARTNER_8" class="partner-box">REVENUE UNIVERSE</a>
+                <a href="PARTNER_9" class="partner-box">MM WALL</a>
+                <a href="PARTNER_10" class="partner-box">TIMEVALL</a>
             </div>
         </div>
     </div>
-
 </body>
 </html>
