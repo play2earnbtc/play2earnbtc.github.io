@@ -17,7 +17,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--bg-dark); font-family: 'Segoe UI', sans-serif; color: white; line-height: 1.2; }
 
-        /* HEADER */
         header { 
             background: #000; padding: 12px 40px; border-bottom: 4px solid var(--mario-red);
             display: flex; align-items: center; justify-content: space-between;
@@ -28,22 +27,19 @@
         .logo span:nth-child(2) { color: var(--mario-blue); }
         .logo span:nth-child(3) { color: var(--mario-yellow); }
         .logo span:nth-child(4) { color: var(--mario-green); }
-        .logo span:nth-child(5) { color: var(--mario-green); margin-left: 5px; }
 
         .secure-tag { border: 1px solid var(--mario-green); color: var(--mario-green); padding: 4px 12px; border-radius: 15px; font-size: 9px; font-weight: bold; }
         .total-paid { color: var(--mario-yellow); font-weight: bold; font-size: 16px; text-align: right; }
         .online-status { color: var(--mario-green); font-size: 10px; display: block; }
 
-        /* TICKER */
         .ticker-wrap { width: 100%; background: #000; margin-top: 55px; overflow: hidden; border-bottom: 1px solid #1c2128; padding: 10px 0; }
         .ticker { display: inline-block; white-space: nowrap; animation: scroll 30s linear infinite; color: var(--mario-yellow); font-size: 13px; font-weight: bold; }
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* GRID SYSTEM */
         .container { max-width: 1400px; margin: 30px auto; padding: 20px; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
-        .game-card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 20px; transition: 0.3s; }
+        .game-card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 20px; }
         .img-box { width: 100%; height: 160px; background: #000; border: 1px solid #222; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         
@@ -56,17 +52,13 @@
             box-shadow: 0 4px 0 #a11411;
         }
 
-        .ads-space { 
-            grid-column: span 4; width: 100%; margin: 30px 0; border: 1px dashed #30363d; 
-            height: 100px; display: flex; align-items: center; justify-content: center; color: #444; font-size: 12px;
-        }
+        .ads-space { grid-column: span 4; width: 100%; margin: 30px 0; border: 1px dashed #30363d; height: 100px; display: flex; align-items: center; justify-content: center; color: #444; font-size: 12px; }
 
-        /* PARTNERS */
         .p-header { color: var(--mario-blue); font-weight: 900; margin: 50px 0 30px; text-transform: uppercase; font-size: 24px; }
         .p-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
         .p-box { background: var(--card-bg); border: 1px solid #30363d; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; }
 
-        @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } .p-grid { grid-template-columns: repeat(2, 1fr); } .ads-space { grid-column: span 2; } }
+        @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } .p-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -87,48 +79,39 @@
     <div class="container">
         <div class="grid">
             
-            <!-- Games 1 to 8 -->
-            <script>
-                for(let i=1; i<=8; i++) {
-                    document.write(`
-                    <div class="game-card">
-                        <div class="img-box"><img src="رابط_صورة_${i}"></div>
-                        <span class="price">الصق_قيمة_الربح_${i}_هنا</span>
-                        <span class="name">الصق_اسم_اللعبة_${i}_هنا</span>
-                        <a href="رابط_قفل_البيانات" class="play-btn">Jouer et gagne</a>
-                    </div>`);
-                }
-            </script>
+            <!-- 1 to 8 -->
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_1_هنا</span> <span class="name">الصق_اسم_اللعبة_1_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_2_هنا</span> <span class="name">الصق_اسم_اللعبة_2_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_3_هنا</span> <span class="name">الصق_اسم_اللعبة_3_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_4_هنا</span> <span class="name">الصق_اسم_اللعبة_4_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_5_هنا</span> <span class="name">الصق_اسم_اللعبة_5_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_6_هنا</span> <span class="name">الصق_اسم_اللعبة_6_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_7_هنا</span> <span class="name">الصق_اسم_اللعبة_7_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_8_هنا</span> <span class="name">الصق_اسم_اللعبة_8_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
 
             <div class="ads-space">الصق_كود_الإعلان_الأول_هنا</div>
 
-            <!-- Games 9 to 16 -->
-            <script>
-                for(let i=9; i<=16; i++) {
-                    document.write(`
-                    <div class="game-card">
-                        <div class="img-box"><img src="رابط_صورة_${i}"></div>
-                        <span class="price">الصق_قيمة_الربح_${i}_هنا</span>
-                        <span class="name">الصق_اسم_اللعبة_${i}_هنا</span>
-                        <a href="رابط_قفل_البيانات" class="play-btn">Jouer et gagne</a>
-                    </div>`);
-                }
-            </script>
+            <!-- 9 to 16 -->
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_9_هنا</span> <span class="name">الصق_اسم_اللعبة_9_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_10_هنا</span> <span class="name">الصق_اسم_اللعبة_10_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_11_هنا</span> <span class="name">الصق_اسم_اللعبة_11_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_12_هنا</span> <span class="name">الصق_اسم_اللعبة_12_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_13_هنا</span> <span class="name">الصق_اسم_اللعبة_13_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_14_هنا</span> <span class="name">الصق_اسم_اللعبة_14_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_15_هنا</span> <span class="name">الصق_اسم_اللعبة_15_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_16_هنا</span> <span class="name">الصق_اسم_اللعبة_16_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
 
             <div class="ads-space">الصق_كود_الإعلان_الثاني_هنا</div>
 
-            <!-- Games 17 to 24 -->
-            <script>
-                for(let i=17; i<=24; i++) {
-                    document.write(`
-                    <div class="game-card">
-                        <div class="img-box"><img src="رابط_صورة_${i}"></div>
-                        <span class="price">الصق_قيمة_الربح_${i}_هنا</span>
-                        <span class="name">الصق_اسم_اللعبة_${i}_هنا</span>
-                        <a href="رابط_قفل_البيانات" class="play-btn">Jouer et gagne</a>
-                    </div>`);
-                }
-            </script>
+            <!-- 17 to 24 -->
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_17_هنا</span> <span class="name">الصق_اسم_اللعبة_17_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_18_هنا</span> <span class="name">الصق_اسم_اللعبة_18_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_19_هنا</span> <span class="name">الصق_اسم_اللعبة_19_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_20_هنا</span> <span class="name">الصق_اسم_اللعبة_20_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_21_هنا</span> <span class="name">الصق_اسم_اللعبة_21_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_22_هنا</span> <span class="name">الصق_اسم_اللعبة_22_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_23_هنا</span> <span class="name">الصق_اسم_اللعبة_23_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-box"><img></div> <span class="price">الصق_قيمة_الربح_24_هنا</span> <span class="name">الصق_اسم_اللعبة_24_هنا</span> <a href="رابط_القفل" class="play-btn">Jouer et gagne</a> </div>
 
         </div>
 
