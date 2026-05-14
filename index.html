@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Play2Earn VIP - Official Dashboard</title>
+    <title>Play2Earn VIP - Professional</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -9,7 +9,7 @@
             --mario-red: #E52521;
             --mario-blue: #049CD8;
             --mario-yellow: #FBD000;
-            --mario-green: #2ecc71; /* الأخضر الفوسفوري الاحترافي */
+            --mario-green: #2ecc71; /* الأخضر الفوسفوري */
             --bg-dark: #05070a;
             --card-bg: #111418;
         }
@@ -24,153 +24,107 @@
             position: fixed; top: 0; width: 100%; z-index: 10000;
         }
         
+        /* شعار بألوان ماريو الأصلية */
         .logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
         .logo span:nth-child(1) { color: var(--mario-red); }
         .logo span:nth-child(2) { color: var(--mario-blue); }
         .logo span:nth-child(3) { color: var(--mario-yellow); }
         .logo span:nth-child(4) { color: var(--mario-green); }
-        .logo span:nth-child(5) { color: white; margin-left: 4px; font-weight: 300; }
+        .logo span:nth-child(5) { color: white; margin-left: 4px; }
 
-        .secure-box { display: flex; align-items: center; gap: 8px; color: var(--mario-green); font-size: 11px; font-weight: bold; border: 1px solid #1a2e21; padding: 5px 15px; border-radius: 4px; background: rgba(46, 204, 113, 0.05); }
+        .secure-status { color: var(--mario-green); font-size: 11px; font-weight: bold; border: 1px solid #1a2e21; padding: 5px 15px; border-radius: 4px; background: rgba(46, 204, 113, 0.05); text-transform: uppercase; }
 
         .stats { text-align: right; }
         .total-paid { color: white; font-weight: bold; font-size: 18px; display: block; }
-        .online { color: var(--mario-green); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .online-count { color: var(--mario-green); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* PROFESSIONAL TICKER (No suspicious yellow) */
+        /* شريط التنبيهات الاحترافي - موثوقية عالية */
         .ticker-wrap { width: 100%; background: #111; margin-top: 65px; overflow: hidden; border-bottom: 1px solid #222; padding: 12px 0; }
-        .ticker { display: inline-block; white-space: nowrap; animation: scroll 40s linear infinite; color: #888; font-size: 12px; font-weight: 500; }
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 35s linear infinite; color: #999; font-size: 12px; }
         .ticker b { color: white; margin: 0 10px; }
-        .ticker i { color: var(--mario-green); font-style: normal; font-weight: bold; }
+        .ticker span { color: var(--mario-green); font-weight: bold; }
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
         /* GRID SYSTEM */
         .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
 
-        .game-card { background: var(--card-bg); border: 1px solid #1f242b; border-radius: 8px; padding: 25px; transition: all 0.3s ease; text-align: center; }
-        .game-card:hover { border-color: var(--mario-green); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .game-card { background: var(--card-bg); border: 1px solid #1f242b; border-radius: 8px; padding: 25px; transition: 0.3s; text-align: center; }
+        .game-card:hover { border-color: var(--mario-green); transform: translateY(-3px); }
         
         .img-placeholder { width: 100%; height: 140px; background: #000; border: 1px solid #1c1f23; border-radius: 4px; margin-bottom: 15px; }
         
-        .reward-amount { color: var(--mario-yellow); font-weight: bold; font-size: 20px; display: block; margin-bottom: 4px; }
-        .game-title { color: #555; font-size: 10px; display: block; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        .reward { color: var(--mario-yellow); font-weight: bold; font-size: 20px; display: block; margin-bottom: 4px; }
+        .game-info { color: #555; font-size: 10px; display: block; margin-bottom: 20px; text-transform: uppercase; }
         
-        /* الزر الأخضر الفوسفوري */
-        .action-btn { 
+        /* الزر الأخضر الفوسفوري - مكان الأحمر تماماً */
+        .play-button { 
             background: var(--mario-green); color: #000; text-decoration: none; 
             display: block; padding: 14px; border-radius: 4px; font-weight: 800; font-size: 14px;
-            text-transform: uppercase; transition: 0.2s;
+            text-transform: uppercase; transition: 0.2s; box-shadow: 0 4px 0 #27ae60;
         }
-        .action-btn:hover { background: #27ae60; box-shadow: 0 0 20px rgba(46, 204, 113, 0.4); }
+        .play-button:active { transform: translateY(2px); box-shadow: 0 2px 0 #27ae60; }
 
-        .ad-row { grid-column: span 4; margin: 40px 0; height: 90px; border: 1px solid #111; background: #080a0d; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #222; font-size: 11px; }
+        .ad-divider { grid-column: span 4; margin: 30px 0; height: 90px; border: 1px solid #111; background: #080a0d; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #222; font-size: 11px; }
 
-        @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } .ad-row { grid-column: span 2; } }
+        @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } .ad-divider { grid-column: span 2; } }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo"><span>P</span><span>L</span><span>A</span><span>Y</span><span>2EARN</span> <span>VIP</span></div>
-        <div class="secure-box">● SYSTEM SECURED BY SSL PRO</div>
+        <div class="secure-status">System Secured ● SSL v3</div>
         <div class="stats">
             <span class="total-paid">$3,510,240.00</span>
-            <span class="online">Verified Payouts</span>
+            <span class="online-count">3,124 Users Online</span>
         </div>
     </header>
 
     <div class="ticker-wrap">
         <div class="ticker">
-            <b>INFO:</b> The server is stable <i>●</i> <b>PAYOUT:</b> User ID_88293 processed <i>$25.00</i> via USDT <i>●</i> <b>STATUS:</b> All 24 offer walls are <i>Active</i> <i>●</i> <b>ALERT:</b> Complete the verification to unlock instant withdrawals.
+            <b>STABILITY:</b> Global server status is <span>Online</span> ● <b>PAYOUT:</b> User ID_7712 received <span>$14.20</span> via PayPal ● <b>UPDATE:</b> Verification system is <span>Enabled</span> for secure withdrawals.
         </div>
     </div>
 
     <div class="container">
         <div class="grid">
             
-            <!-- الخانات من 1 إلى 24 مكتوبة يدوياً بالكامل -->
+            <!-- تم توليد الـ 24 مربعاً يدوياً بدون سكربت لضمان الدقة -->
             
-            <!-- خانة 1 -->
-            <div class="game-card">
-                <div class="img-placeholder"></div>
-                <span class="reward-amount">الصق_الربح_1</span>
-                <span class="game-title">اسم_اللعبة_1</span>
-                <a href="رابط_قفل_الربح" class="action-btn">Play & Earn</a>
-            </div>
-            <!-- خانة 2 -->
-            <div class="game-card">
-                <div class="img-placeholder"></div>
-                <span class="reward-amount">الصق_الربح_2</span>
-                <span class="game-title">اسم_اللعبة_2</span>
-                <a href="رابط_قفل_الربح" class="action-btn">Play & Earn</a>
-            </div>
-            <!-- خانة 3 -->
-            <div class="game-card">
-                <div class="img-placeholder"></div>
-                <span class="reward-amount">الصق_الربح_3</span>
-                <span class="game-title">اسم_اللعبة_3</span>
-                <a href="رابط_قفل_الربح" class="action-btn">Play & Earn</a>
-            </div>
-            <!-- خانة 4 -->
-            <div class="game-card">
-                <div class="img-placeholder"></div>
-                <span class="reward-amount">الصق_الربح_4</span>
-                <span class="game-title">اسم_اللعبة_4</span>
-                <a href="رابط_قفل_الربح" class="action-btn">Play & Earn</a>
-            </div>
-            <!-- خانة 5 -->
-            <div class="game-card">
-                <div class="img-placeholder"></div>
-                <span class="reward-amount">الصق_الربح_5</span>
-                <span class="game-title">اسم_اللعبة_5</span>
-                <a href="رابط_قفل_الربح" class="action-btn">Play & Earn</a>
-            </div>
-            <!-- خانة 6 -->
-            <div class="game-card">
-                <div class="img-placeholder"></div>
-                <span class="reward-amount">الصق_الربح_6</span>
-                <span class="game-title">اسم_اللعبة_6</span>
-                <a href="رابط_قفل_الربح" class="action-btn">Play & Earn</a>
-            </div>
-            <!-- خانة 7 -->
-            <div class="game-card">
-                <div class="img-placeholder"></div>
-                <span class="reward-amount">الصق_الربح_7</span>
-                <span class="game-title">اسم_اللعبة_7</span>
-                <a href="رابط_قفل_الربح" class="action-btn">Play & Earn</a>
-            </div>
-            <!-- خانة 8 -->
-            <div class="game-card">
-                <div class="img-placeholder"></div>
-                <span class="reward-amount">الصق_الربح_8</span>
-                <span class="game-title">اسم_اللعبة_8</span>
-                <a href="رابط_قفل_الربح" class="action-btn">Play & Earn</a>
-            </div>
+            <!-- 1 to 8 -->
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_قيمة_الربح_1</span> <span class="game-info">الصق_اسم_اللعبة_1</span> <a href="رابط_قفل_المحتوى" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_قيمة_الربح_2</span> <span class="game-info">الصق_اسم_اللعبة_2</span> <a href="رابط_قفل_المحتوى" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_قيمة_الربح_3</span> <span class="game-info">الصق_اسم_اللعبة_3</span> <a href="رابط_قفل_المحتوى" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_قيمة_الربح_4</span> <span class="game-info">الصق_اسم_اللعبة_4</span> <a href="رابط_قفل_المحتوى" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_قيمة_الربح_5</span> <span class="game-info">الصق_اسم_اللعبة_5</span> <a href="رابط_قفل_المحتوى" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_قيمة_الربح_6</span> <span class="game-info">الصق_اسم_اللعبة_6</span> <a href="رابط_قفل_المحتوى" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_قيمة_الربح_7</span> <span class="game-info">الصق_اسم_اللعبة_7</span> <a href="رابط_قفل_المحتوى" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_قيمة_الربح_8</span> <span class="game-info">الصق_اسم_اللعبة_8</span> <a href="رابط_قفل_المحتوى" class="play-button">Jouer et gagne</a> </div>
 
-            <div class="ad-row">الصق_كود_الإعلان_1_هنا</div>
+            <div class="ad-divider">الصق_كود_الإعلان_الأول_هنا</div>
 
-            <!-- خانة 9 إلى 16 -->
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_9</span> <span class="game-title">اللعبة_9</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_10</span> <span class="game-title">اللعبة_10</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_11</span> <span class="game-title">اللعبة_11</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_12</span> <span class="game-title">اللعبة_12</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_13</span> <span class="game-title">اللعبة_13</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_14</span> <span class="game-title">اللعبة_14</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_15</span> <span class="game-title">اللعبة_15</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_16</span> <span class="game-title">اللعبة_16</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
+            <!-- 9 to 16 -->
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_9</span> <span class="game-info">اللعبة_9</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_10</span> <span class="game-info">اللعبة_10</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_11</span> <span class="game-info">اللعبة_11</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_12</span> <span class="game-info">اللعبة_12</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_13</span> <span class="game-info">اللعبة_13</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_14</span> <span class="game-info">اللعبة_14</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_15</span> <span class="game-info">اللعبة_15</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_16</span> <span class="game-info">اللعبة_16</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
 
-            <div class="ad-row">الصق_كود_الإعلان_2_هنا</div>
+            <div class="ad-divider">الصق_كود_الإعلان_الثاني_هنا</div>
 
-            <!-- خانة 17 إلى 24 -->
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_17</span> <span class="game-title">اللعبة_17</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_18</span> <span class="game-title">اللعبة_18</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_19</span> <span class="game-title">اللعبة_19</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_20</span> <span class="game-title">اللعبة_20</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_21</span> <span class="game-title">اللعبة_21</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_22</span> <span class="game-title">اللعبة_22</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_23</span> <span class="game-title">اللعبة_23</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
-            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward-amount">الصق_الربح_24</span> <span class="game-title">اللعبة_24</span> <a href="رابط_القفل" class="action-btn">Play & Earn</a> </div>
+            <!-- 17 to 24 -->
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_17</span> <span class="game-info">اللعبة_17</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_18</span> <span class="game-info">اللعبة_18</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_19</span> <span class="game-info">اللعبة_19</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_20</span> <span class="game-info">اللعبة_20</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_21</span> <span class="game-info">اللعبة_21</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_22</span> <span class="game-info">اللعبة_22</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_23</span> <span class="game-info">اللعبة_23</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
+            <div class="game-card"> <div class="img-placeholder"></div> <span class="reward">الصق_الربح_24</span> <span class="game-info">اللعبة_24</span> <a href="رابط_القفل" class="play-button">Jouer et gagne</a> </div>
 
         </div>
     </div>
