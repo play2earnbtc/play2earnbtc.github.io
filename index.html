@@ -1,83 +1,60 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Play2Earn VIP - Full Independent Source</title>
+    <title>Play2Earn VIP - Professional Interface</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         :root {
-            --mario-red: #E52521;
-            --mario-blue: #049CD8;
-            --mario-yellow: #FBD000;
-            --mario-green: #2ecc71;
-            --bg-dark: #05070a;
-            --card-bg: #111418;
-            --ad-bg: #0d0f12;
+            --mario-red: #E52521; --mario-blue: #049CD8; --mario-yellow: #FBD000; --mario-green: #2ecc71;
+            --bg-dark: #05070a; --card-bg: #111418; --ad-bg: #0d0f12;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: var(--bg-dark); font-family: 'Segoe UI', Arial, sans-serif; color: white; }
 
+        /* الهيدر المحدث مع الإحصائيات في اليمين */
         header { 
-            background: #000; padding: 15px 50px; border-bottom: 2px solid #222;
+            background: #000; padding: 10px 30px; border-bottom: 2px solid #222;
             display: flex; align-items: center; justify-content: space-between;
             position: fixed; top: 0; width: 100%; z-index: 10000;
         }
         
-        .logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
-        .logo .p { color: var(--mario-red); }
-        .logo .l { color: var(--mario-blue); }
-        .logo .a { color: var(--mario-yellow); }
-        .logo .y { color: var(--mario-green); }
-        .logo .m2 { color: var(--mario-red); margin-left: 5px; }
-        .logo .me { color: var(--mario-blue); }
-        .logo .ma { color: var(--mario-yellow); }
-        .logo .mr { color: var(--mario-green); }
-        .logo .mn { color: var(--mario-red); }
-        .logo .vip { color: white; margin-left: 4px; }
+        .logo { font-size: 22px; font-weight: 900; letter-spacing: -1px; }
+        .logo span { display: inline-block; }
+        .p { color: var(--mario-red); } .l { color: var(--mario-blue); } .a { color: var(--mario-yellow); } .y { color: var(--mario-green); }
+        .m2 { color: var(--mario-red); margin-left: 4px; } .me { color: var(--mario-blue); } .ma { color: var(--mario-yellow); } .mr { color: var(--mario-green); } .mn { color: var(--mario-red); }
+        .vip { color: white; margin-left: 4px; }
 
-        .secure { color: var(--mario-green); font-size: 11px; font-weight: bold; text-transform: uppercase; }
+        /* منطقة الإحصائيات أقصى اليمين */
+        .header-stats { display: flex; align-items: center; gap: 20px; font-size: 12px; font-weight: bold; }
+        .stat-item { color: #999; }
+        .stat-value { color: var(--mario-green); }
+        .secure-tag { background: rgba(46, 204, 113, 0.1); color: var(--mario-green); padding: 4px 8px; border-radius: 4px; border: 1px solid var(--mario-green); font-size: 10px; }
 
-        .ticker-wrap { width: 100%; background: #111; margin-top: 65px; overflow: hidden; border-bottom: 1px solid #222; padding: 12px 0; }
-        .ticker { display: inline-block; white-space: nowrap; animation: scroll 35s linear infinite; color: #999; font-size: 12px; padding-left: 100%; }
-        .ticker b { color: white; }
-        .ticker span.green { color: var(--mario-green); font-weight: bold; }
+        /* شريط السحوبات الوهمية */
+        .ticker-wrap { width: 100%; background: #0a0a0a; margin-top: 55px; overflow: hidden; border-bottom: 1px solid #1a1a1a; padding: 10px 0; }
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 40s linear infinite; color: #666; font-size: 11px; padding-left: 100%; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
         .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
-        .game-card { background: var(--card-bg); border: 2px solid #1f242b; border-radius: 12px; padding: 20px; text-align: center; }
-        .img-box { width: 100%; height: 140px; background: #000; border-radius: 8px; margin-bottom: 15px; overflow: hidden; border: 1px solid #222; }
+        .game-card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; padding: 15px; text-align: center; }
+        .img-box { width: 100%; height: 130px; background: #000; border-radius: 6px; margin-bottom: 12px; overflow: hidden; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .game-title { font-size: 14px; font-weight: bold; color: #fff; margin-bottom: 10px; display: block; }
-        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 22px; display: block; margin-bottom: 15px; }
-        
-        .play-button { 
-            background: var(--mario-green); color: #000; text-decoration: none; 
-            display: block; padding: 12px; border-radius: 6px; font-weight: 900; font-size: 13px;
-            text-transform: uppercase; transition: 0.2s;
-        }
+        .game-title { font-size: 13px; font-weight: bold; margin-bottom: 8px; display: block; }
+        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 20px; display: block; margin-bottom: 12px; }
+        .play-button { background: var(--mario-green); color: #000; text-decoration: none; display: block; padding: 10px; border-radius: 4px; font-weight: 900; font-size: 12px; text-transform: uppercase; }
 
-        .ad-banner { 
-            grid-column: span 4; background: var(--ad-bg); border: 1px dashed #333; 
-            height: 100px; display: flex; align-items: center; justify-content: center; 
-            border-radius: 8px; color: #444; font-weight: bold; margin: 10px 0;
-        }
+        .ad-banner { grid-column: span 4; background: #0d0f12; border: 1px dashed #333; height: 90px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #444; font-size: 12px; }
 
-        .partners-section { margin-top: 80px; text-align: center; padding-bottom: 50px; }
-        .partners-title { color: var(--mario-blue); font-size: 14px; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; }
-        .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
-        .partner-box { 
-            display: flex; align-items: center; justify-content: center;
-            background: #111; border: 1px solid #222; padding: 15px; 
-            border-radius: 6px; color: #444; font-size: 11px; font-weight: 900; 
-            text-decoration: none; transition: 0.3s;
-        }
-        .partner-box img { width: 20px; height: 20px; margin-right: 10px; border-radius: 3px; }
-        .partner-box:hover { border-color: var(--mario-blue); color: white; background: #161a1d; }
+        .partners-section { margin-top: 60px; text-align: center; }
+        .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px; }
+        .partner-box { display: flex; align-items: center; justify-content: center; background: #111; border: 1px solid #222; padding: 12px; border-radius: 4px; color: #555; font-size: 10px; font-weight: 900; text-decoration: none; }
+        .partner-box img { width: 16px; height: 16px; margin-right: 8px; }
 
-        @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } .ad-banner { grid-column: span 2; } .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } .ad-banner { grid-column: span 2; } .partners-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -88,156 +65,56 @@
             <span class="m2">2</span><span class="me">E</span><span class="ma">A</span><span class="mr">R</span><span class="mn">N</span>
             <span class="vip">VIP</span>
         </div>
-        <div class="secure">SECURED SYSTEM</div>
+        
+        <div class="header-stats">
+            <div class="stat-item">TOTAL PAID: <span class="stat-value">$3,510,240</span></div>
+            <div class="stat-item"><span class="stat-value">● 3,124 Online</span></div>
+            <div class="secure-tag">SECURED SYSTEM</div>
+        </div>
     </header>
 
     <div class="ticker-wrap">
         <div class="ticker">
-            <b>STABILITY:</b> Status: <span class="green">Online</span> ● 
-            <b>STATISTICS:</b> Total Paid: <span class="green">$3,510,240</span> ● 
-            <span class="green">● 3,124 Online</span> ● 
-            <b>OFFERWALLS:</b> All partners are currently active.
+            LATEST WITHDRAWALS: User_9921 just withdrew $50.00 via PayPal • User_4412 just withdrew $25.00 via Bitcoin • User_7712 just withdrew $100.00 via Amazon Card • User_1029 just withdrew $15.00 via Payeer • 
         </div>
     </div>
 
     <div class="container">
         <div class="grid">
-            
-            <!-- المربعات من 1 إلى 8 -->
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_1" alt=""></div>
-                <span class="game-title">Game 1</span><span class="reward">10.00$</span>
-                <a href="URL_1" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_2" alt=""></div>
-                <span class="game-title">Game 2</span><span class="reward">10.00$</span>
-                <a href="URL_2" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_3" alt=""></div>
-                <span class="game-title">Game 3</span><span class="reward">10.00$</span>
-                <a href="URL_3" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_4" alt=""></div>
-                <span class="game-title">Game 4</span><span class="reward">10.00$</span>
-                <a href="URL_4" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_5" alt=""></div>
-                <span class="game-title">Game 5</span><span class="reward">10.00$</span>
-                <a href="URL_5" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_6" alt=""></div>
-                <span class="game-title">Game 6</span><span class="reward">10.00$</span>
-                <a href="URL_6" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_7" alt=""></div>
-                <span class="game-title">Game 7</span><span class="reward">10.00$</span>
-                <a href="URL_7" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_8" alt=""></div>
-                <span class="game-title">Game 8</span><span class="reward">10.00$</span>
-                <a href="URL_8" class="play-button">JOUER ET GAGNE</a>
-            </div>
+            <!-- الـ 24 مربع تم فكهم برمجياً -->
+            <div class="game-card"><div class="img-box"><img src="IMG_1" alt=""></div><span class="game-title">Game 1</span><span class="reward">10.00$</span><a href="URL_1" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_2" alt=""></div><span class="game-title">Game 2</span><span class="reward">10.00$</span><a href="URL_2" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_3" alt=""></div><span class="game-title">Game 3</span><span class="reward">10.00$</span><a href="URL_3" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_4" alt=""></div><span class="game-title">Game 4</span><span class="reward">10.00$</span><a href="URL_4" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_5" alt=""></div><span class="game-title">Game 5</span><span class="reward">10.00$</span><a href="URL_5" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_6" alt=""></div><span class="game-title">Game 6</span><span class="reward">10.00$</span><a href="URL_6" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_7" alt=""></div><span class="game-title">Game 7</span><span class="reward">10.00$</span><a href="URL_7" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_8" alt=""></div><span class="game-title">Game 8</span><span class="reward">10.00$</span><a href="URL_8" class="play-button">JOUER ET GAGNE</a></div>
 
-            <div class="ad-banner">ADVERTISEMENT BANNER 1</div>
+            <div class="ad-banner">ADVERTISEMENT PLACEHOLDER 1</div>
 
-            <!-- المربعات من 9 إلى 16 -->
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_9" alt=""></div>
-                <span class="game-title">Game 9</span><span class="reward">10.00$</span>
-                <a href="URL_9" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_10" alt=""></div>
-                <span class="game-title">Game 10</span><span class="reward">10.00$</span>
-                <a href="URL_10" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_11" alt=""></div>
-                <span class="game-title">Game 11</span><span class="reward">10.00$</span>
-                <a href="URL_11" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_12" alt=""></div>
-                <span class="game-title">Game 12</span><span class="reward">10.00$</span>
-                <a href="URL_12" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_13" alt=""></div>
-                <span class="game-title">Game 13</span><span class="reward">10.00$</span>
-                <a href="URL_13" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_14" alt=""></div>
-                <span class="game-title">Game 14</span><span class="reward">10.00$</span>
-                <a href="URL_14" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_15" alt=""></div>
-                <span class="game-title">Game 15</span><span class="reward">10.00$</span>
-                <a href="URL_15" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_16" alt=""></div>
-                <span class="game-title">Game 16</span><span class="reward">10.00$</span>
-                <a href="URL_16" class="play-button">JOUER ET GAGNE</a>
-            </div>
+            <div class="game-card"><div class="img-box"><img src="IMG_9" alt=""></div><span class="game-title">Game 9</span><span class="reward">10.00$</span><a href="URL_9" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_10" alt=""></div><span class="game-title">Game 10</span><span class="reward">10.00$</span><a href="URL_10" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_11" alt=""></div><span class="game-title">Game 11</span><span class="reward">10.00$</span><a href="URL_11" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_12" alt=""></div><span class="game-title">Game 12</span><span class="reward">10.00$</span><a href="URL_12" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_13" alt=""></div><span class="game-title">Game 13</span><span class="reward">10.00$</span><a href="URL_13" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_14" alt=""></div><span class="game-title">Game 14</span><span class="reward">10.00$</span><a href="URL_14" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_15" alt=""></div><span class="game-title">Game 15</span><span class="reward">10.00$</span><a href="URL_15" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_16" alt=""></div><span class="game-title">Game 16</span><span class="reward">10.00$</span><a href="URL_16" class="play-button">JOUER ET GAGNE</a></div>
 
-            <div class="ad-banner">ADVERTISEMENT BANNER 2</div>
+            <div class="ad-banner">ADVERTISEMENT PLACEHOLDER 2</div>
 
-            <!-- المربعات من 17 إلى 24 -->
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_17" alt=""></div>
-                <span class="game-title">Game 17</span><span class="reward">10.00$</span>
-                <a href="URL_17" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_18" alt=""></div>
-                <span class="game-title">Game 18</span><span class="reward">10.00$</span>
-                <a href="URL_18" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_19" alt=""></div>
-                <span class="game-title">Game 19</span><span class="reward">10.00$</span>
-                <a href="URL_19" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_20" alt=""></div>
-                <span class="game-title">Game 20</span><span class="reward">10.00$</span>
-                <a href="URL_20" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_21" alt=""></div>
-                <span class="game-title">Game 21</span><span class="reward">10.00$</span>
-                <a href="URL_21" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_22" alt=""></div>
-                <span class="game-title">Game 22</span><span class="reward">10.00$</span>
-                <a href="URL_22" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_23" alt=""></div>
-                <span class="game-title">Game 23</span><span class="reward">10.00$</span>
-                <a href="URL_23" class="play-button">JOUER ET GAGNE</a>
-            </div>
-            <div class="game-card">
-                <div class="img-box"><img src="IMG_24" alt=""></div>
-                <span class="game-title">Game 24</span><span class="reward">10.00$</span>
-                <a href="URL_24" class="play-button">JOUER ET GAGNE</a>
-            </div>
-
+            <div class="game-card"><div class="img-box"><img src="IMG_17" alt=""></div><span class="game-title">Game 17</span><span class="reward">10.00$</span><a href="URL_17" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_18" alt=""></div><span class="game-title">Game 18</span><span class="reward">10.00$</span><a href="URL_18" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_19" alt=""></div><span class="game-title">Game 19</span><span class="reward">10.00$</span><a href="URL_19" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_20" alt=""></div><span class="game-title">Game 20</span><span class="reward">10.00$</span><a href="URL_20" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_21" alt=""></div><span class="game-title">Game 21</span><span class="reward">10.00$</span><a href="URL_21" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_22" alt=""></div><span class="game-title">Game 22</span><span class="reward">10.00$</span><a href="URL_22" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_23" alt=""></div><span class="game-title">Game 23</span><span class="reward">10.00$</span><a href="URL_23" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card"><div class="img-box"><img src="IMG_24" alt=""></div><span class="game-title">Game 24</span><span class="reward">10.00$</span><a href="URL_24" class="play-button">JOUER ET GAGNE</a></div>
         </div>
 
-        <!-- 10 Partners -->
         <div class="partners-section">
-            <div class="partners-title">OFFERWALL PARTNERS</div>
             <div class="partners-grid">
                 <a href="P_URL_1" class="partner-box"><img src="P_IMG_1" alt=""> ADGEM</a>
                 <a href="P_URL_2" class="partner-box"><img src="P_IMG_2" alt=""> AYETSTUDIOS</a>
