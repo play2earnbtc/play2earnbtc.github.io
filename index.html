@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Play2Earn VIP - Final Version</title>
+    <title>Play2Earn VIP - Ultimate Build</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -12,6 +12,7 @@
             --mario-green: #2ecc71;
             --bg-dark: #05070a;
             --card-bg: #111418;
+            --ad-bg: #0d0f12;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,13 +40,10 @@
 
         .ticker-wrap { width: 100%; background: #111; margin-top: 65px; overflow: hidden; border-bottom: 1px solid #222; padding: 12px 0; }
         .ticker { display: inline-block; white-space: nowrap; animation: scroll 35s linear infinite; color: #999; font-size: 12px; padding-left: 100%; }
-        .ticker b { color: white; }
-        .ticker span { color: var(--mario-green); }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
         .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
         
-        /* شبكة المربعات (24 مربع) */
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
 
         .game-card { background: var(--card-bg); border: 2px solid #1f242b; border-radius: 12px; padding: 25px; text-align: center; }
@@ -57,9 +55,24 @@
             display: block; padding: 15px; border-radius: 6px; font-weight: 900; font-size: 14px;
             text-transform: uppercase; transition: 0.2s;
         }
-        .play-button:hover { background: #27ae60; transform: scale(1.02); }
 
-        /* قسم الشركات العشرة */
+        /* مستطيلات الإعلانات */
+        .ad-banner { 
+            grid-column: span 4; 
+            background: var(--ad-bg); 
+            border: 1px dashed #333; 
+            height: 120px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-radius: 8px;
+            color: #444;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 10px 0;
+        }
+
         .partners-section { margin-top: 80px; text-align: center; padding-bottom: 50px; }
         .partners-title { color: var(--mario-blue); font-size: 14px; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; }
         .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
@@ -68,9 +81,13 @@
             border-radius: 6px; color: #444; font-size: 11px; font-weight: 900; 
             text-decoration: none; transition: 0.3s;
         }
-        .partner-box:hover { border-color: var(--mario-blue); color: white; background: #161a1d; }
+        .partner-box:hover { border-color: var(--mario-blue); color: white; }
 
-        @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1100px) { 
+            .grid { grid-template-columns: repeat(2, 1fr); } 
+            .ad-banner { grid-column: span 2; }
+            .partners-grid { grid-template-columns: repeat(2, 1fr); } 
+        }
     </style>
 </head>
 <body>
@@ -86,28 +103,40 @@
 
     <div class="ticker-wrap">
         <div class="ticker">
-            <b>STABILITY:</b> Status: <span>Online</span> ● <b>OFFERWALLS:</b> All partners are currently active.
+            <b>STABILITY:</b> Status: <span style="color:var(--mario-green)">Online</span> ● <b>OFFERWALLS:</b> All partners are currently active.
         </div>
     </div>
 
     <div class="container">
-        <!-- توليد 24 مربع بشكل آلي مطابق للصورة -->
         <div class="grid">
-            <!-- سيتم تكرار هذا المربع 24 مرة -->
+            <!-- أول 8 مربعات -->
             <script>
-                for (let i = 1; i <= 24; i++) {
-                    document.write(`
-                        <div class="game-card">
-                            <div class="img-box"></div>
-                            <span class="reward">10.00$</span>
-                            <a href="#" class="play-button">JOUER ET GAGNE</a>
-                        </div>
-                    `);
+                for (let i = 1; i <= 8; i++) {
+                    document.write('<div class="game-card"><div class="img-box"></div><span class="reward">10.00$</span><a href="#" class="play-button">JOUER ET GAGNE</a></div>');
+                }
+            </script>
+
+            <!-- مستطيل إعلاني أول -->
+            <div class="ad-banner">Advertisement Space - Banner 1</div>
+
+            <!-- ثاني 8 مربعات -->
+            <script>
+                for (let i = 1; i <= 8; i++) {
+                    document.write('<div class="game-card"><div class="img-box"></div><span class="reward">10.00$</span><a href="#" class="play-button">JOUER ET GAGNE</a></div>');
+                }
+            </script>
+
+            <!-- مستطيل إعلاني ثاني -->
+            <div class="ad-banner">Advertisement Space - Banner 2</div>
+
+            <!-- آخر 8 مربعات -->
+            <script>
+                for (let i = 1; i <= 8; i++) {
+                    document.write('<div class="game-card"><div class="img-box"></div><span class="reward">10.00$</span><a href="#" class="play-button">JOUER ET GAGNE</a></div>');
                 }
             </script>
         </div>
 
-        <!-- قسم الشركات العشرة كما في الصورة -->
         <div class="partners-section">
             <div class="partners-title">OFFERWALL PARTNERS</div>
             <div class="partners-grid">
