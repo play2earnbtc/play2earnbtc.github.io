@@ -11,16 +11,15 @@
             --mario-yellow: #FBD000;
             --mario-green: #43B047;
             --bg-dark: #0a0c0f;
-            --header-bg: #000;
             --card-bg: #161b22;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg-dark); font-family: sans-serif; color: white; line-height: 1.6; }
+        body { background: var(--bg-dark); font-family: 'Segoe UI', sans-serif; color: white; line-height: 1.2; }
 
-        /* HEADER SECTION */
+        /* HEADER */
         header { 
-            background: var(--header-bg); padding: 10px 40px; border-bottom: 3px solid var(--mario-red);
+            background: #000; padding: 12px 40px; border-bottom: 4px solid var(--mario-red);
             display: flex; align-items: center; justify-content: space-between;
             position: fixed; top: 0; width: 100%; z-index: 9999;
         }
@@ -31,49 +30,54 @@
         .logo span:nth-child(4) { color: var(--mario-green); }
         .logo span:nth-child(5) { color: var(--mario-green); margin-left: 5px; }
 
-        .secure-btn { border: 1px solid var(--mario-green); color: var(--mario-green); padding: 4px 12px; border-radius: 20px; font-size: 9px; font-weight: bold; }
-        .total-paid { color: var(--mario-yellow); font-weight: bold; font-size: 16px; }
+        .secure-tag { border: 1px solid var(--mario-green); color: var(--mario-green); padding: 4px 12px; border-radius: 15px; font-size: 9px; font-weight: bold; }
+        .total-paid { color: var(--mario-yellow); font-weight: bold; font-size: 16px; text-align: right; }
+        .online-status { color: var(--mario-green); font-size: 10px; display: block; }
 
         /* TICKER */
-        .ticker-wrap { width: 100%; background: #000; margin-top: 50px; overflow: hidden; border-bottom: 1px solid #1c2128; padding: 10px 0; }
-        .ticker { display: inline-block; white-space: nowrap; animation: scroll 20s linear infinite; color: var(--mario-yellow); font-size: 13px; font-weight: bold; }
+        .ticker-wrap { width: 100%; background: #000; margin-top: 55px; overflow: hidden; border-bottom: 1px solid #1c2128; padding: 10px 0; }
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 30s linear infinite; color: var(--mario-yellow); font-size: 13px; font-weight: bold; }
         @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* GAME GRID */
-        .container { max-width: 1400px; margin: 40px auto; padding: 20px; text-align: center; }
-        .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        /* GRID SYSTEM */
+        .container { max-width: 1400px; margin: 30px auto; padding: 20px; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
-        .game-card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 20px; width: 300px; }
+        .game-card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 20px; transition: 0.3s; }
         .img-box { width: 100%; height: 160px; background: #000; border: 1px solid #222; border-radius: 8px; margin-bottom: 15px; overflow: hidden; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         
         .price { color: var(--mario-yellow); font-weight: bold; font-size: 18px; display: block; margin-bottom: 5px; }
         .name { color: #ccc; font-size: 10px; display: block; margin-bottom: 20px; }
         
-        .btn-locker { 
+        .play-btn { 
             background: var(--mario-red); color: white; text-decoration: none; 
             display: block; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 16px;
             box-shadow: 0 4px 0 #a11411;
         }
 
-        /* ADS BOX */
-        .ads-box { 
-            width: 100%; max-width: 1100px; margin: 40px auto; border: 1px dashed #30363d; 
-            height: 120px; display: flex; align-items: center; justify-content: center; color: #444; font-size: 12px;
+        .ads-space { 
+            grid-column: span 4; width: 100%; margin: 30px 0; border: 1px dashed #30363d; 
+            height: 100px; display: flex; align-items: center; justify-content: center; color: #444; font-size: 12px;
         }
 
         /* PARTNERS */
-        .p-header { color: var(--mario-blue); font-weight: 900; margin-bottom: 30px; text-transform: uppercase; font-size: 24px; }
-        .p-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; max-width: 1100px; margin: 0 auto; }
+        .p-header { color: var(--mario-blue); font-weight: 900; margin: 50px 0 30px; text-transform: uppercase; font-size: 24px; }
+        .p-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
         .p-box { background: var(--card-bg); border: 1px solid #30363d; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; }
+
+        @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } .p-grid { grid-template-columns: repeat(2, 1fr); } .ads-space { grid-column: span 2; } }
     </style>
 </head>
 <body>
 
     <header>
         <div class="logo"><span>P</span><span>L</span><span>A</span><span>Y</span><span>2EARN VIP</span></div>
-        <div class="secure-btn">SECURE CONNECTION</div>
-        <div class="total-paid">Total Paid: $3,510,240</div>
+        <div class="secure-tag">SSL SECURED</div>
+        <div>
+            <span class="total-paid">Total Paid: $3,510,240</span>
+            <span class="online-status">● 3,124 Online</span>
+        </div>
     </header>
 
     <div class="ticker-wrap">
@@ -82,24 +86,51 @@
 
     <div class="container">
         <div class="grid">
-            <!-- Game Card 1 -->
-            <div class="game-card">
-                <div class="img-box"><img src="رابط_الصورة_هنا"></div>
-                <span class="price">ضع_السعر_1_هنا</span>
-                <span class="name">ضع_اسم_اللعبة_1_هنا</span>
-                <a href="ضع_رابط_قفل_المحتوى_هنا" class="btn-locker">Jouer et gagne</a>
-            </div>
+            
+            <!-- Games 1 to 8 -->
+            <script>
+                for(let i=1; i<=8; i++) {
+                    document.write(`
+                    <div class="game-card">
+                        <div class="img-box"><img src="رابط_صورة_${i}"></div>
+                        <span class="price">الصق_قيمة_الربح_${i}_هنا</span>
+                        <span class="name">الصق_اسم_اللعبة_${i}_هنا</span>
+                        <a href="رابط_قفل_البيانات" class="play-btn">Jouer et gagne</a>
+                    </div>`);
+                }
+            </script>
 
-            <!-- Game Card 2 -->
-            <div class="game-card">
-                <div class="img-box"><img src="رابط_الصورة_هنا"></div>
-                <span class="price">ضع_السعر_2_هنا</span>
-                <span class="name">ضع_اسم_اللعبة_2_هنا</span>
-                <a href="ضع_رابط_قفل_المحتوى_هنا" class="btn-locker">Jouer et gagne</a>
-            </div>
+            <div class="ads-space">الصق_كود_الإعلان_الأول_هنا</div>
+
+            <!-- Games 9 to 16 -->
+            <script>
+                for(let i=9; i<=16; i++) {
+                    document.write(`
+                    <div class="game-card">
+                        <div class="img-box"><img src="رابط_صورة_${i}"></div>
+                        <span class="price">الصق_قيمة_الربح_${i}_هنا</span>
+                        <span class="name">الصق_اسم_اللعبة_${i}_هنا</span>
+                        <a href="رابط_قفل_البيانات" class="play-btn">Jouer et gagne</a>
+                    </div>`);
+                }
+            </script>
+
+            <div class="ads-space">الصق_كود_الإعلان_الثاني_هنا</div>
+
+            <!-- Games 17 to 24 -->
+            <script>
+                for(let i=17; i<=24; i++) {
+                    document.write(`
+                    <div class="game-card">
+                        <div class="img-box"><img src="رابط_صورة_${i}"></div>
+                        <span class="price">الصق_قيمة_الربح_${i}_هنا</span>
+                        <span class="name">الصق_اسم_اللعبة_${i}_هنا</span>
+                        <a href="رابط_قفل_البيانات" class="play-btn">Jouer et gagne</a>
+                    </div>`);
+                }
+            </script>
+
         </div>
-
-        <div class="ads-box">ضع كود الإعلان الأول هنا</div>
 
         <h2 class="p-header">OFFERWALL PARTNERS</h2>
         <div class="p-grid">
@@ -108,7 +139,6 @@
             <a href="#" class="p-box" style="color:var(--mario-yellow)">Torox</a>
             <a href="#" class="p-box" style="color:var(--mario-green)">MM Wall</a>
             <a href="#" class="p-box" style="color:white">RevU</a>
-            <!-- Row 2 -->
             <a href="#" class="p-box" style="color:var(--mario-red)">TimeWall</a>
             <a href="#" class="p-box" style="color:var(--mario-blue)">BitLabs</a>
             <a href="#" class="p-box" style="color:var(--mario-yellow)">MyChips</a>
