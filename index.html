@@ -11,50 +11,53 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg-dark); font-family: 'Segoe UI', Arial, sans-serif; color: white; }
+        body { background: var(--bg-dark); font-family: 'Segoe UI', Arial, sans-serif; color: white; overflow-x: hidden; }
 
-        /* الهيدر المحدث مع الإحصائيات في اليمين */
         header { 
-            background: #000; padding: 10px 30px; border-bottom: 2px solid #222;
+            background: #000; padding: 10px 20px; border-bottom: 2px solid #222;
             display: flex; align-items: center; justify-content: space-between;
             position: fixed; top: 0; width: 100%; z-index: 10000;
         }
         
-        .logo { font-size: 22px; font-weight: 900; letter-spacing: -1px; }
-        .logo span { display: inline-block; }
+        .logo { font-size: 18px; font-weight: 900; letter-spacing: -1px; flex-shrink: 0; }
         .p { color: var(--mario-red); } .l { color: var(--mario-blue); } .a { color: var(--mario-yellow); } .y { color: var(--mario-green); }
-        .m2 { color: var(--mario-red); margin-left: 4px; } .me { color: var(--mario-blue); } .ma { color: var(--mario-yellow); } .mr { color: var(--mario-green); } .mn { color: var(--mario-red); }
+        .m2 { color: var(--mario-red); margin-left: 2px; } .me { color: var(--mario-blue); } .ma { color: var(--mario-yellow); } .mr { color: var(--mario-green); } .mn { color: var(--mario-red); }
         .vip { color: white; margin-left: 4px; }
 
-        /* منطقة الإحصائيات أقصى اليمين */
-        .header-stats { display: flex; align-items: center; gap: 20px; font-size: 12px; font-weight: bold; }
-        .stat-item { color: #999; }
+        .header-stats { display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: bold; }
         .stat-value { color: var(--mario-green); }
-        .secure-tag { background: rgba(46, 204, 113, 0.1); color: var(--mario-green); padding: 4px 8px; border-radius: 4px; border: 1px solid var(--mario-green); font-size: 10px; }
+        .secure-tag { background: rgba(46, 204, 113, 0.1); color: var(--mario-green); padding: 2px 6px; border-radius: 4px; border: 1px solid var(--mario-green); font-size: 9px; }
 
-        /* شريط السحوبات الوهمية */
-        .ticker-wrap { width: 100%; background: #0a0a0a; margin-top: 55px; overflow: hidden; border-bottom: 1px solid #1a1a1a; padding: 10px 0; }
-        .ticker { display: inline-block; white-space: nowrap; animation: scroll 40s linear infinite; color: #666; font-size: 11px; padding-left: 100%; }
+        .ticker-wrap { width: 100%; background: #0a0a0a; margin-top: 50px; overflow: hidden; border-bottom: 1px solid #1a1a1a; padding: 8px 0; }
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 40s linear infinite; color: #666; font-size: 10px; padding-left: 100%; }
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
-        .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .container { max-width: 1400px; margin: 20px auto; padding: 0 15px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
 
-        .game-card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; padding: 15px; text-align: center; }
-        .img-box { width: 100%; height: 130px; background: #000; border-radius: 6px; margin-bottom: 12px; overflow: hidden; }
+        .game-card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; padding: 12px; text-align: center; }
+        .img-box { width: 100%; height: 110px; background: #000; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .game-title { font-size: 13px; font-weight: bold; margin-bottom: 8px; display: block; }
-        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 20px; display: block; margin-bottom: 12px; }
-        .play-button { background: var(--mario-green); color: #000; text-decoration: none; display: block; padding: 10px; border-radius: 4px; font-weight: 900; font-size: 12px; text-transform: uppercase; }
+        .game-title { font-size: 12px; font-weight: bold; margin-bottom: 5px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 18px; display: block; margin-bottom: 10px; }
+        .play-button { background: var(--mario-green); color: #000; text-decoration: none; display: block; padding: 8px; border-radius: 4px; font-weight: 900; font-size: 11px; text-transform: uppercase; }
 
-        .ad-banner { grid-column: span 4; background: #0d0f12; border: 1px dashed #333; height: 90px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #444; font-size: 12px; }
+        .ad-banner { grid-column: span 4; background: #0d0f12; border: 1px dashed #333; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #444; font-size: 11px; }
 
-        .partners-section { margin-top: 60px; text-align: center; }
-        .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px; }
-        .partner-box { display: flex; align-items: center; justify-content: center; background: #111; border: 1px solid #222; padding: 12px; border-radius: 4px; color: #555; font-size: 10px; font-weight: 900; text-decoration: none; }
-        .partner-box img { width: 16px; height: 16px; margin-right: 8px; }
+        .partners-section { margin-top: 40px; text-align: center; }
+        .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 15px; }
+        .partner-box { display: flex; align-items: center; justify-content: center; background: #111; border: 1px solid #222; padding: 10px; border-radius: 4px; color: #555; font-size: 9px; font-weight: 900; text-decoration: none; }
 
-        @media (max-width: 1000px) { .grid { grid-template-columns: repeat(2, 1fr); } .ad-banner { grid-column: span 2; } .partners-grid { grid-template-columns: repeat(2, 1fr); } }
+        /* تكييف الموبايل الصارم */
+        @media (max-width: 768px) {
+            header { padding: 10px; }
+            .header-stats { gap: 5px; }
+            .stat-item:first-child { display: none; } /* إخفاء الإجمالي في الموبايلات الصغيرة جداً للمساحة */
+            .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+            .ad-banner { grid-column: span 2; }
+            .partners-grid { grid-template-columns: repeat(2, 1fr); }
+            .reward { font-size: 16px; }
+        }
     </style>
 </head>
 <body>
@@ -65,11 +68,10 @@
             <span class="m2">2</span><span class="me">E</span><span class="ma">A</span><span class="mr">R</span><span class="mn">N</span>
             <span class="vip">VIP</span>
         </div>
-        
         <div class="header-stats">
-            <div class="stat-item">TOTAL PAID: <span class="stat-value">$3,510,240</span></div>
+            <div class="stat-item">PAID: <span class="stat-value">$3,510,240</span></div>
             <div class="stat-item"><span class="stat-value">● 3,124 Online</span></div>
-            <div class="secure-tag">SECURED SYSTEM</div>
+            <div class="secure-tag">SECURED</div>
         </div>
     </header>
 
@@ -81,7 +83,7 @@
 
     <div class="container">
         <div class="grid">
-            <!-- الـ 24 مربع تم فكهم برمجياً -->
+            <!-- 24 Game Cards -->
             <div class="game-card"><div class="img-box"><img src="IMG_1" alt=""></div><span class="game-title">Game 1</span><span class="reward">10.00$</span><a href="URL_1" class="play-button">JOUER ET GAGNE</a></div>
             <div class="game-card"><div class="img-box"><img src="IMG_2" alt=""></div><span class="game-title">Game 2</span><span class="reward">10.00$</span><a href="URL_2" class="play-button">JOUER ET GAGNE</a></div>
             <div class="game-card"><div class="img-box"><img src="IMG_3" alt=""></div><span class="game-title">Game 3</span><span class="reward">10.00$</span><a href="URL_3" class="play-button">JOUER ET GAGNE</a></div>
@@ -116,16 +118,16 @@
 
         <div class="partners-section">
             <div class="partners-grid">
-                <a href="P_URL_1" class="partner-box"><img src="P_IMG_1" alt=""> ADGEM</a>
-                <a href="P_URL_2" class="partner-box"><img src="P_IMG_2" alt=""> AYETSTUDIOS</a>
-                <a href="P_URL_3" class="partner-box"><img src="P_IMG_3" alt=""> LOOTABLY</a>
-                <a href="P_URL_4" class="partner-box"><img src="P_IMG_4" alt=""> OFFERTORO</a>
-                <a href="P_URL_5" class="partner-box"><img src="P_IMG_5" alt=""> CPX RESEARCH</a>
-                <a href="P_URL_6" class="partner-box"><img src="P_IMG_6" alt=""> BITLABS</a>
-                <a href="P_URL_7" class="partner-box"><img src="P_IMG_7" alt=""> ADGATE</a>
-                <a href="P_URL_8" class="partner-box"><img src="P_IMG_8" alt=""> REVENUE UNIVERSE</a>
-                <a href="P_URL_9" class="partner-box"><img src="P_IMG_9" alt=""> MM WALL</a>
-                <a href="P_URL_10" class="partner-box"><img src="P_IMG_10" alt=""> TIMEVALL</a>
+                <a href="P_URL_1" class="partner-box">ADGEM</a>
+                <a href="P_URL_2" class="partner-box">AYETSTUDIOS</a>
+                <a href="P_URL_3" class="partner-box">LOOTABLY</a>
+                <a href="P_URL_4" class="partner-box">OFFERTORO</a>
+                <a href="P_URL_5" class="partner-box">CPX RESEARCH</a>
+                <a href="P_URL_6" class="partner-box">BITLABS</a>
+                <a href="P_URL_7" class="partner-box">ADGATE</a>
+                <a href="P_URL_8" class="partner-box">REVENUE UNIVERSE</a>
+                <a href="P_URL_9" class="partner-box">MM WALL</a>
+                <a href="P_URL_10" class="partner-box">TIMEVALL</a>
             </div>
         </div>
     </div>
