@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Play2Earn VIP | Skeleton Template</title>
+    <title>Play2Earn VIP | Full Professional Template</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -10,118 +10,132 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: #0d0f13; font-family: 'Arial', sans-serif; color: white; padding-top: 150px; }
 
-        /* الهيدر: لوغو ماريو + SSL */
+        /* --- الهيدر الاحترافي --- */
         header {
             position: fixed; top: 0; left: 0; width: 100%; height: 100px;
             background: #16191e; border-bottom: 3px solid #2d333b;
             display: flex; align-items: center; justify-content: space-between;
             padding: 0 30px; z-index: 1000;
         }
+
+        /* لوغو سوبير ماريو */
         .mario-logo {
             font-family: 'Press Start 2P', cursive; font-size: 16px; display: flex; gap: 4px;
         }
-        .mario-logo span:nth-child(odd) { color: #ff0000; text-shadow: 2px 2px #000; }
-        .mario-logo span:nth-child(even) { color: #eec900; text-shadow: 2px 2px #000; }
-        .mario-logo .vip { color: #00ff85 !important; margin-left: 10px; }
+        .mario-logo span:nth-child(1), .mario-logo span:nth-child(5), .mario-logo span:nth-child(9) { color: #ff0000; text-shadow: 2px 2px #000; } /* أحمر */
+        .mario-logo span:nth-child(2), .mario-logo span:nth-child(6) { color: #eec900; text-shadow: 2px 2px #000; } /* أصفر */
+        .mario-logo span:nth-child(3), .mario-logo span:nth-child(7) { color: #00ff00; text-shadow: 2px 2px #000; } /* أخضر */
+        .mario-logo span:nth-child(4), .mario-logo span:nth-child(8) { color: #0000ff; text-shadow: 2px 2px #000; } /* أزرق */
+        .mario-logo .vip-text { color: #00ff85 !important; margin-left: 10px; }
 
-        .ssl-box {
+        /* قفل الأمان SSL */
+        .ssl-badge {
             background: rgba(0, 255, 133, 0.1); border: 1px solid #00ff85;
-            padding: 8px 15px; border-radius: 8px; color: #00ff85; font-size: 12px; font-weight: bold;
+            padding: 8px 15px; border-radius: 8px; color: #00ff85; font-size: 11px; font-weight: bold;
+            display: flex; align-items: center; gap: 8px;
         }
 
-        .top-stats { text-align: right; font-size: 12px; }
-        .online { color: #00ff85; display: block; margin-top: 5px; }
+        .header-stats { text-align: right; }
+        .paid-amount { color: #fca311; font-weight: 900; font-size: 14px; }
+        .online-dot { color: #00ff85; font-size: 10px; display: block; margin-top: 5px; text-transform: uppercase; }
 
-        /* شريط السحوبات */
-        .ticker { position: fixed; top: 100px; left: 0; width: 100%; background: #1c2128; height: 35px; border-bottom: 1px solid #2d333b; overflow: hidden; display: flex; align-items: center; z-index: 999; }
-        .ticker-wrap { display: flex; animation: run 30s linear infinite; }
+        /* --- شريط السحوبات السريع --- */
+        .payout-ticker { position: fixed; top: 100px; left: 0; width: 100%; background: #1c2128; height: 35px; border-bottom: 1px solid #2d333b; overflow: hidden; display: flex; align-items: center; z-index: 999; }
+        .ticker-move { display: flex; animation: drift 35s linear infinite; }
         .ticker-item { margin-right: 60px; font-size: 12px; font-weight: bold; white-space: nowrap; }
-        @keyframes run { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        @keyframes drift { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* الهيكل العظمي للمحتوى */
-        .wrapper { max-width: 1400px; margin: 0 auto; padding: 20px; }
-        .grid-container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        /* --- الهيكل العظمي للموقع --- */
+        .container { max-width: 1450px; margin: 0 auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
-        /* خانات الألعاب */
-        .game-box { background: #16191e; border: 2px solid #2d333b; border-radius: 12px; padding: 15px; text-align: center; }
-        .game-box img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
-        .btn-play { background: #00ff85; color: #000; text-decoration: none; display: block; padding: 10px; border-radius: 5px; font-weight: 900; font-size: 12px; }
+        /* خانة اللعبة */
+        .game-card { background: #16191e; border: 2px solid #2d333b; border-radius: 12px; padding: 15px; text-align: center; transition: 0.3s; }
+        .game-card:hover { border-color: #00ff85; }
+        .game-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
+        .play-btn { background: #00ff85; color: #000; text-decoration: none; display: block; padding: 12px; border-radius: 8px; font-weight: 900; font-size: 12px; text-transform: uppercase; }
 
-        /* أماكن الإعلانات */
-        .ads-space { grid-column: span 4; background: #1a1d23; border: 2px dashed #3d444d; height: 100px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold; margin: 10px 0; }
+        /* مساحات الإعلانات */
+        .ads-banner { grid-column: span 4; background: #1a1d23; border: 2px dashed #3d444d; height: 90px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #555; font-weight: bold; margin: 10px 0; }
 
-        /* خانات الشركات */
-        .partners-header { color: #fca311; margin: 40px 0 20px; font-size: 20px; font-weight: 900; }
-        .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
-        .company-box { background: #1a1d23; border: 1px solid #2d333b; border-radius: 10px; padding: 15px; text-align: center; position: relative; }
-        .company-box img { height: 35px; margin-bottom: 10px; }
-        .bonus-tag { position: absolute; top: 8px; right: 8px; background: #00ff85; color: #000; font-size: 10px; padding: 2px 5px; border-radius: 4px; font-weight: bold; }
+        /* خانات الشركات (10 خانات) */
+        .partners-title { color: #fca311; margin: 50px 0 20px; font-size: 22px; font-weight: 900; border-left: 4px solid #fca311; padding-left: 15px; }
+        .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; margin-bottom: 50px; }
+        .partner-box { background: #1a1d23; border: 1px solid #2d333b; border-radius: 10px; padding: 20px; text-align: center; position: relative; }
+        .partner-box img { height: 40px; margin-bottom: 10px; opacity: 0.8; }
+        .bonus-badge { position: absolute; top: 8px; right: 8px; background: #00ff85; color: #000; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 900; }
 
-        @media (max-width: 900px) { .grid-container, .partners-grid { grid-template-columns: repeat(2, 1fr); } .ads-space { grid-column: span 2; } }
+        @media (max-width: 1000px) { .grid, .partners-grid { grid-template-columns: repeat(2, 1fr); } .ads-banner { grid-column: span 2; } }
     </style>
 </head>
 <body>
 
     <header>
         <div class="mario-logo">
-            <span>P</span><span>L</span><span>A</span><span>Y</span><span>2</span><span>E</span><span>A</span><span>R</span><span>N</span><span class="vip">VIP</span>
+            <span>P</span><span>L</span><span>A</span><span>Y</span><span>2</span><span>E</span><span>A</span><span>R</span><span>N</span>
+            <span class="vip-text">VIP</span>
         </div>
-        <div class="ssl-box"><i class="fas fa-lock"></i> SSL SECURED</div>
-        <div class="top-stats">
-            Total Paid: <b style="color: #fca311;">$3,510,240</b>
-            <span class="online"><i class="fas fa-circle"></i> 3,124 PLAYERS ONLINE</span>
+        
+        <div class="ssl-badge">
+            <i class="fas fa-shield-alt"></i> SSL SECURED
+        </div>
+
+        <div class="header-stats">
+            <div class="paid-amount">Total Paid: $3,510,240</div>
+            <span class="online-dot"><i class="fas fa-circle"></i> 3,124 Players Online</span>
         </div>
     </header>
 
-    <div class="ticker">
-        <div class="ticker-wrap">
-            <div class="ticker-item">USER_22: <span style="color:#00ff85">$14.00</span></div>
-            <div class="ticker-item">ARBI_GOLD: <span style="color:#00ff85">$55.00</span></div>
-            <div class="ticker-item">WIN_FAST: <span style="color:#00ff85">$10.00</span></div>
+    <div class="payout-ticker">
+        <div class="ticker-move">
+            <div class="ticker-item">USER_771: <span style="color:#00ff85">$15.00 PAYPAL</span></div>
+            <div class="ticker-item">ARBI_GOLD: <span style="color:#00ff85">$14.20 LTC</span></div>
+            <div class="ticker-item">KING_WIN: <span style="color:#00ff85">$100.00 VISA</span></div>
+            <div class="ticker-item">SAM_PLAY: <span style="color:#00ff85">$5.00 BTC</span></div>
         </div>
     </div>
 
-    <div class="wrapper">
-        <div class="grid-container">
-            <!-- 8 خانات ألعاب -->
+    <div class="container">
+        <div class="grid">
+            <!-- مجموعة الألعاب 1 (8 خانات) -->
             <script>
                 for(let i=1; i<=8; i++) {
-                    document.write('<div class="game-box"><img src="1.png"><h3>Game #'+i+'</h3><a href="#" class="btn-play">JOUER ET GAGNE</a></div>');
+                    document.write('<div class="game-card"><img src="1.png"><h3>Game Reward #'+i+'</h3><a href="#" class="play-btn">Jouer et gagne</a></div>');
                 }
             </script>
 
-            <div class="ads-space">ADVERTISING SPACE #1</div>
+            <div class="ads-banner">ADVERTISING SPACE #1</div>
 
-            <!-- 8 خانات ألعاب إضافية -->
+            <!-- مجموعة الألعاب 2 (8 خانات) -->
             <script>
                 for(let i=9; i<=16; i++) {
-                    document.write('<div class="game-box"><img src="2.png"><h3>Game #'+i+'</h3><a href="#" class="btn-play">JOUER ET GAGNE</a></div>');
+                    document.write('<div class="game-card"><img src="2.png"><h3>Game Reward #'+i+'</h3><a href="#" class="play-btn">Jouer et gagne</a></div>');
                 }
             </script>
 
-            <div class="ads-space">ADVERTISING SPACE #2</div>
+            <div class="ads-banner">ADVERTISING SPACE #2</div>
 
-            <!-- 8 خانات ألعاب أخيرة (المجموع 24) -->
+            <!-- مجموعة الألعاب 3 (8 خانات) -->
             <script>
                 for(let i=17; i<=24; i++) {
-                    document.write('<div class="game-box"><img src="3.png"><h3>Game #'+i+'</h3><a href="#" class="btn-play">JOUER ET GAGNE</a></div>');
+                    document.write('<div class="game-card"><img src="3.png"><h3>Game Reward #'+i+'</h3><a href="#" class="play-btn">Jouer et gagne</a></div>');
                 }
             </script>
         </div>
 
-        <div class="partners-header">PARTENAIRES D'OFFRES</div>
+        <!-- الهيكل العظمي لشركات الإحالة -->
+        <h2 class="partners-title">OFFERWALL PARTNERS</h2>
         <div class="partners-grid">
-            <!-- 10 خانات للشركات -->
-            <div class="company-box"><div class="bonus-tag">+50%</div><img src="logo.png"><p>AdGate</p></div>
-            <div class="company-box"><div class="bonus-tag">+50%</div><img src="logo.png"><p>AyetStudios</p></div>
-            <div class="company-box"><div class="bonus-tag">+50%</div><img src="logo.png"><p>Torox</p></div>
-            <div class="company-box"><div class="bonus-tag">+50%</div><img src="logo.png"><p>MM Wall</p></div>
-            <div class="company-box"><div class="bonus-tag">+50%</div><img src="logo.png"><p>RevU</p></div>
-            <div class="company-box"><div class="bonus-tag">+20%</div><img src="logo.png"><p>TimeWall</p></div>
-            <div class="company-box"><img src="logo.png"><p>BitLabs</p></div>
-            <div class="company-box"><img src="logo.png"><p>MyChips</p></div>
-            <div class="company-box"><img src="logo.png"><p>Lootably</p></div>
-            <div class="company-box"><img src="logo.png"><p>Adjoe</p></div>
+            <div class="partner-box"><div class="bonus-badge">+50%</div><img src="logo.png"><p>AdGate</p></div>
+            <div class="partner-box"><div class="bonus-badge">+50%</div><img src="logo.png"><p>AyetStudios</p></div>
+            <div class="partner-box"><div class="bonus-badge">+50%</div><img src="logo.png"><p>Torox</p></div>
+            <div class="partner-box"><div class="bonus-badge">+50%</div><img src="logo.png"><p>MM Wall</p></div>
+            <div class="partner-box"><div class="bonus-badge">+50%</div><img src="logo.png"><p>RevU</p></div>
+            <div class="partner-box"><div class="bonus-badge">+20%</div><img src="logo.png"><p>TimeWall</p></div>
+            <div class="partner-box"><img src="logo.png"><p>BitLabs</p></div>
+            <div class="partner-box"><img src="logo.png"><p>MyChips</p></div>
+            <div class="partner-box"><img src="logo.png"><p>Lootably</p></div>
+            <div class="partner-box"><img src="logo.png"><p>Adjoe</p></div>
         </div>
     </div>
 
