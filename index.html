@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <title>Play2Earn VIP - Full Build</title>
+    <title>Play2Earn VIP - Final Version</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
@@ -15,7 +15,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg-dark); font-family: 'Segoe UI', Arial, sans-serif; color: white; overflow-x: hidden; }
+        body { background: var(--bg-dark); font-family: 'Segoe UI', Arial, sans-serif; color: white; }
 
         header { 
             background: #000; padding: 15px 50px; border-bottom: 2px solid #222;
@@ -24,44 +24,51 @@
         }
         
         .logo { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
-        .logo .c1 { color: var(--mario-red); }
-        .logo .c2 { color: var(--mario-blue); }
-        .logo .c3 { color: var(--mario-yellow); }
-        .logo .c4 { color: var(--mario-green); }
-        .logo .c5 { color: var(--mario-red); margin-left: 5px; }
-        .logo .c6 { color: var(--mario-blue); }
-        .logo .c7 { color: var(--mario-yellow); }
-        .logo .c8 { color: var(--mario-green); }
-        .logo .c9 { color: var(--mario-red); }
-        .logo .vip-text { color: white; margin-left: 4px; }
+        .logo .p { color: var(--mario-red); }
+        .logo .l { color: var(--mario-blue); }
+        .logo .a { color: var(--mario-yellow); }
+        .logo .y { color: var(--mario-green); }
+        .logo .m2 { color: var(--mario-red); margin-left: 5px; }
+        .logo .me { color: var(--mario-blue); }
+        .logo .ma { color: var(--mario-yellow); }
+        .logo .mr { color: var(--mario-green); }
+        .logo .mn { color: var(--mario-red); }
+        .logo .vip { color: white; margin-left: 4px; }
+
+        .secure { color: var(--mario-green); font-size: 11px; font-weight: bold; text-transform: uppercase; }
 
         .ticker-wrap { width: 100%; background: #111; margin-top: 65px; overflow: hidden; border-bottom: 1px solid #222; padding: 12px 0; }
-        .ticker { display: inline-block; white-space: nowrap; animation: scroll 35s linear infinite; color: #999; font-size: 12px; }
-        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .ticker { display: inline-block; white-space: nowrap; animation: scroll 35s linear infinite; color: #999; font-size: 12px; padding-left: 100%; }
+        .ticker b { color: white; }
+        .ticker span { color: var(--mario-green); }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
 
         .container { max-width: 1400px; margin: 40px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        
+        /* شبكة المربعات (24 مربع) */
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
 
-        .game-card { background: var(--card-bg); border: 1px solid #1f242b; border-radius: 8px; padding: 20px; text-align: center; transition: 0.3s; }
-        .game-card:hover { border-color: #333; }
-        .reward { color: var(--mario-yellow); font-weight: bold; font-size: 18px; display: block; margin-top: 10px; }
+        .game-card { background: var(--card-bg); border: 2px solid #1f242b; border-radius: 12px; padding: 25px; text-align: center; }
+        .img-box { width: 100%; height: 140px; background: #000; border-radius: 8px; margin-bottom: 20px; }
+        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 22px; display: block; margin-bottom: 20px; }
         
         .play-button { 
             background: var(--mario-green); color: #000; text-decoration: none; 
-            display: block; padding: 12px; border-radius: 4px; font-weight: 800; font-size: 13px;
-            text-transform: uppercase; margin-top: 15px; box-shadow: 0 3px 0 #27ae60;
+            display: block; padding: 15px; border-radius: 6px; font-weight: 900; font-size: 14px;
+            text-transform: uppercase; transition: 0.2s;
         }
+        .play-button:hover { background: #27ae60; transform: scale(1.02); }
 
-        .partners-section { margin-top: 50px; text-align: center; padding-bottom: 50px; border-top: 1px solid #222; pt: 30px; }
-        .partners-title { color: var(--mario-blue); font-size: 14px; font-weight: 900; text-transform: uppercase; margin: 30px 0 20px 0; }
-        .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-        
-        .partner-link { 
-            display: block; background: #0a0c0f; border: 1px solid #1a1d21; padding: 15px; 
-            border-radius: 4px; color: #666; font-size: 10px; font-weight: bold; 
-            text-decoration: none; transition: 0.2s;
+        /* قسم الشركات العشرة */
+        .partners-section { margin-top: 80px; text-align: center; padding-bottom: 50px; }
+        .partners-title { color: var(--mario-blue); font-size: 14px; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; }
+        .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
+        .partner-box { 
+            display: block; background: #111; border: 1px solid #222; padding: 20px; 
+            border-radius: 6px; color: #444; font-size: 11px; font-weight: 900; 
+            text-decoration: none; transition: 0.3s;
         }
-        .partner-link:hover { border-color: var(--mario-blue); color: white; background: #111; }
+        .partner-box:hover { border-color: var(--mario-blue); color: white; background: #161a1d; }
 
         @media (max-width: 1100px) { .grid { grid-template-columns: repeat(2, 1fr); } .partners-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
@@ -70,63 +77,53 @@
 
     <header>
         <div class="logo">
-            <span class="c1">P</span><span class="c2">L</span><span class="c3">A</span><span class="c4">Y</span>
-            <span class="c5">2</span><span class="c6">E</span><span class="c7">A</span><span class="c8">R</span><span class="c9">N</span>
-            <span class="vip-text">VIP</span>
+            <span class="p">P</span><span class="l">L</span><span class="a">A</span><span class="y">Y</span>
+            <span class="m2">2</span><span class="me">E</span><span class="ma">A</span><span class="mr">R</span><span class="mn">N</span>
+            <span class="vip">VIP</span>
         </div>
-        <div style="color: var(--mario-green); font-size: 11px; font-weight: bold;">SYSTEM LIVE</div>
+        <div class="secure">SECURED SYSTEM</div>
     </header>
 
     <div class="ticker-wrap">
-        <div class="ticker"><b>NETWORK:</b> Status: <span style="color:var(--mario-green)">Active</span> ● <b>PAYOUTS:</b> Instant processing enabled.</div>
+        <div class="ticker">
+            <b>STABILITY:</b> Status: <span>Online</span> ● <b>OFFERWALLS:</b> All partners are currently active.
+        </div>
     </div>
 
     <div class="container">
-        <!-- شبكة الـ 24 مربع -->
+        <!-- توليد 24 مربع بشكل آلي مطابق للصورة -->
         <div class="grid">
             <!-- سيتم تكرار هذا المربع 24 مرة -->
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
-            <div class="game-card"> <div style="height:100px; background:#000; border-radius:4px;"></div> <span class="reward">10.00$</span> <a href="#" class="play-button">Jouer et gagne</a> </div>
+            <script>
+                for (let i = 1; i <= 24; i++) {
+                    document.write(`
+                        <div class="game-card">
+                            <div class="img-box"></div>
+                            <span class="reward">10.00$</span>
+                            <a href="#" class="play-button">JOUER ET GAGNE</a>
+                        </div>
+                    `);
+                }
+            </script>
         </div>
 
-        <!-- قسم الشركات العشرة -->
+        <!-- قسم الشركات العشرة كما في الصورة -->
         <div class="partners-section">
             <div class="partners-title">OFFERWALL PARTNERS</div>
             <div class="partners-grid">
-                <a href="#" class="partner-link">ADGEM</a>
-                <a href="#" class="partner-link">AYETSTUDIOS</a>
-                <a href="#" class="partner-link">LOOTABLY</a>
-                <a href="#" class="partner-link">OFFERTORO</a>
-                <a href="#" class="partner-link">CPX RESEARCH</a>
-                <a href="#" class="partner-link">BITLABS</a>
-                <a href="#" class="partner-link">ADGATE</a>
-                <a href="#" class="partner-link">REVENUE UNIVERSE</a>
-                <a href="#" class="partner-link">MM WALL</a>
-                <a href="#" class="partner-link">TIMEVALL</a>
+                <a href="#" class="partner-box">ADGEM</a>
+                <a href="#" class="partner-box">AYETSTUDIOS</a>
+                <a href="#" class="partner-box">LOOTABLY</a>
+                <a href="#" class="partner-box">OFFERTORO</a>
+                <a href="#" class="partner-box">CPX RESEARCH</a>
+                <a href="#" class="partner-box">BITLABS</a>
+                <a href="#" class="partner-box">ADGATE</a>
+                <a href="#" class="partner-box">REVENUE UNIVERSE</a>
+                <a href="#" class="partner-box">MM WALL</a>
+                <a href="#" class="partner-box">TIMEVALL</a>
             </div>
         </div>
     </div>
+
 </body>
 </html>
