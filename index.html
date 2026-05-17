@@ -39,7 +39,7 @@
         .img-box { width: 100%; height: 110px; background: #000; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
         .game-title { font-size: 12px; font-weight: bold; margin-bottom: 5px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 18px; display: block; margin-bottom: 10px; }
+        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 14px; display: block; margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .play-button { background: var(--mario-green); color: #000; text-decoration: none; display: block; padding: 8px; border-radius: 4px; font-weight: 900; font-size: 11px; text-transform: uppercase; }
 
         .ad-banner { grid-column: span 4; background: #0d0f12; border: 1px dashed #333; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #444; font-size: 11px; }
@@ -48,7 +48,6 @@
         .partners-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 15px; }
         .partner-box { display: flex; align-items: center; justify-content: center; background: #111; border: 1px solid #222; padding: 10px; border-radius: 4px; color: #555; font-size: 9px; font-weight: 900; text-decoration: none; }
 
-        /* تكييف الموبايل الصارم */
         @media (max-width: 768px) {
             header { padding: 10px; }
             .header-stats { gap: 5px; }
@@ -56,7 +55,6 @@
             .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .ad-banner { grid-column: span 2; }
             .partners-grid { grid-template-columns: repeat(2, 1fr); }
-            .reward { font-size: 16px; }
         }
     </style>
 </head>
@@ -83,7 +81,17 @@
 
     <div class="container">
         <div class="grid">
-            <div class="game-card"><div class="img-box"><img src="IMG_1" alt=""></div><span class="game-title">Game 1</span><span class="reward">10.00$</span><a href="https://singingfiles.com/show.php?l=0&u=2527370&id=74329" class="play-button">JOUER ET GAGNE</a></div>
+            <div class="game-card">
+                <div class="img-box">
+                    <img src="https://prnt.sc/zXSntzWboz9I" alt="Tap Coin">
+                </div>
+                <span class="game-title">برنامج مكافآت العملات Tap Coin</span>
+                <span class="reward">سجّل الآن في برنامج مكافآت العملات</span>
+                <a href="https://singingfiles.com/show.php?l=0&u=2527370&id=74329" class="play-button">
+                    JOUER ET GAGNE | $25.00
+                </a>
+            </div>
+
             <div class="game-card"><div class="img-box"><img src="IMG_2" alt=""></div><span class="game-title">Game 2</span><span class="reward">10.00$</span><a href="https://singingfiles.com/show.php?l=0&u=2527370&id=74329" class="play-button">JOUER ET GAGNE</a></div>
             <div class="game-card"><div class="img-box"><img src="IMG_3" alt=""></div><span class="game-title">Game 3</span><span class="reward">10.00$</span><a href="https://singingfiles.com/show.php?l=0&u=2527370&id=74329" class="play-button">JOUER ET GAGNE</a></div>
             <div class="game-card"><div class="img-box"><img src="IMG_4" alt=""></div><span class="game-title">Game 4</span><span class="reward">10.00$</span><a href="https://singingfiles.com/show.php?l=0&u=2527370&id=74329" class="play-button">JOUER ET GAGNE</a></div>
@@ -117,16 +125,16 @@
 
         <div class="partners-section">
             <div class="partners-grid">
-                <a href="P_URL_1" class="partner-box">ADGEM</a>
-                <a href="P_URL_2" class="partner-box">AYETSTUDIOS</a>
-                <a href="P_URL_3" class="partner-box">LOOTABLY</a>
-                <a href="P_URL_4" class="partner-box">OFFERTORO</a>
-                <a href="P_URL_5" class="partner-box">CPX RESEARCH</a>
-                <a href="P_URL_6" class="partner-box">BITLABS</a>
-                <a href="P_URL_7" class="partner-box">ADGATE</a>
-                <a href="P_URL_8" class="partner-box">REVENUE UNIVERSE</a>
-                <a href="P_URL_9" class="partner-box">MM WALL</a>
-                <a href="P_URL_10" class="partner-box">TIMEVALL</a>
+                <a href="#" class="partner-box">ADGEM</a>
+                <a href="#" class="partner-box">AYETSTUDIOS</a>
+                <a href="#" class="partner-box">LOOTABLY</a>
+                <a href="#" class="partner-box">OFFERTORO</a>
+                <a href="#" class="partner-box">CPX RESEARCH</a>
+                <a href="#" class="partner-box">BITLABS</a>
+                <a href="#" class="partner-box">ADGATE</a>
+                <a href="#" class="partner-box">REVENUE UNIVERSE</a>
+                <a href="#" class="partner-box">MM WALL</a>
+                <a href="#" class="partner-box">TIMEVALL</a>
             </div>
         </div>
     </div>
