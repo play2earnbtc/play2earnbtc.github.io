@@ -21,7 +21,7 @@
         
         .logo { font-size: 18px; font-weight: 900; letter-spacing: -1px; flex-shrink: 0; }
         .p { color: var(--mario-red); } .l { color: var(--mario-blue); } .a { color: var(--mario-yellow); } .y { color: var(--mario-green); }
-        .m2 { color: var(--mario-red); margin-left: 2px; } .me { color: var(--mario-blue); } .ma { color: var(--mario-yellow); } .mr { color: var(--mario-green); } .mn { color: var(--mario-red); }
+        .m2 { color: var(--mario-red); margin-left: 2px; } .me { color: var(--mario-blue); } .ma { color: var(--mario-yellow); margin-left: 1px; } .mr { color: var(--mario-green); } .mn { color: var(--mario-red); }
         .vip { color: white; margin-left: 4px; }
 
         .header-stats { display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: bold; }
@@ -35,11 +35,11 @@
         .container { max-width: 1400px; margin: 20px auto; padding: 0 15px; }
         .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
 
-        .game-card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; padding: 12px; text-align: center; }
-        .img-box { width: 100%; height: 110px; background: #000; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+        .game-card { background: var(--card-bg); border: 1px solid #222; border-radius: 8px; padding: 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; height: 260px; }
+        .img-box { width: 100%; height: 110px; background: #000; border-radius: 6px; margin-bottom: 10px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .game-title { font-size: 12px; font-weight: bold; margin-bottom: 5px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 14px; display: block; margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .game-title { font-size: 11px; font-weight: bold; margin-bottom: 3px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #fff; }
+        .reward { color: var(--mario-yellow); font-weight: 900; font-size: 12px; display: block; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
         .play-button { background: var(--mario-green); color: #000; text-decoration: none; display: block; padding: 8px; border-radius: 4px; font-weight: 900; font-size: 11px; text-transform: uppercase; }
 
         .ad-banner { grid-column: span 4; background: #0d0f12; border: 1px dashed #333; height: 70px; display: flex; align-items: center; justify-content: center; border-radius: 6px; color: #444; font-size: 11px; }
@@ -83,9 +83,9 @@
         <div class="grid">
             <div class="game-card">
                 <div class="img-box">
-                    <img src="https://prnt.sc/zXSntzWboz9I" alt="Samsung S25 Presentation">
+                    <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=500&auto=format&fit=crop" alt="Tap Coin Rewards">
                 </div>
-                <span class="game-title">برنامج مكافآت العملات Tap Coin</span>
+                <span class="game-title">Tap Coin برنامج مكافآت العملات</span>
                 <span class="reward">سجّل الآن في برنامج مكافآت العملات</span>
                 <a href="https://singingfiles.com/show.php?l=0&u=2527370&id=74329" class="play-button">
                     JOUER ET GAGNE | $25.00
